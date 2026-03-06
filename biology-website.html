@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أسس التنوع البيولوجي — السنة الثانية ثانوي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════
+   DESIGN SYSTEM — BLUE & SOFT GREEN
+════════════════════════════════════════ */
+:root{
+  --ink:     #071828;
+  --navy:    #0d2a40;
+  --blue:    #1a6ea0;
+  --blue-lt: #2d90c8;
+  --sky:     #e0f0fa;
+  --teal:    #148a72;
+  --teal-lt: #1eac90;
+  --mint:    #4ecdb4;
+  --mint-lt: #a8e8da;
+  --mint-pale:#e8faf6;
+  --grn:     #22884a;
+  --grn-lt:  #34bb68;
+  --lime-lt: #b8f0cc;
+  --lime-pale:#edfaf3;
+  --amber:   #d48810;
+  --amber-lt:#fff0cc;
+  --rose:    #b83050;
+  --rose-lt: #fce0e8;
+  --white:   #ffffff;
+  --off:     #f4fbff;
+  --text:    #071828;
+  --mid:     #2a4a5a;
+  --border:  #d0e8f4;
+  --shadow:  0 4px 24px rgba(7,24,40,.1);
+  --shadow-lg: 0 8px 40px rgba(7,24,40,.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Cairo',sans-serif;background:var(--off);color:var(--text);min-height:100vh;}
+
+/* ════════ PAGE SYSTEM ════════ */
+.page{display:none;animation:pageIn .35s ease;}
+.page.active{display:block;}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* ════════ NAV ════════ */
+.nav{
+  background:var(--ink);padding:0 24px;height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:300;box-shadow:0 2px 20px rgba(0,0,0,.35);
+}
+.nav-logo{display:flex;align-items:center;gap:9px;cursor:pointer;flex-shrink:0;}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--teal-lt),var(--blue-lt));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;}
+.nav-logo-text{color:#fff;font-weight:800;font-size:.88rem;line-height:1.2;}
+.nav-logo-sub{color:rgba(255,255,255,.38);font-size:.62rem;font-family:'Tajawal',sans-serif;}
+.nav-links{display:flex;gap:2px;flex:1;justify-content:center;}
+.nav-links button{background:none;border:none;color:rgba(255,255,255,.6);font-family:'Tajawal',sans-serif;font-size:.8rem;padding:6px 10px;border-radius:8px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.nav-links button:hover{color:#fff;background:rgba(255,255,255,.09);}
+.nav-links button.nav-active{color:var(--mint);background:rgba(78,205,180,.1);}
+.nav-start{background:var(--teal-lt);color:#fff;border:none;padding:7px 16px;border-radius:50px;font-size:.8rem;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;}
+.nav-start:hover{background:var(--teal);}
+.nav-hamburger{display:none;background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;padding:4px 8px;}
+.mobile-menu{display:none;position:fixed;top:58px;right:0;left:0;background:var(--navy);z-index:299;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);}
+.mobile-menu.open{display:flex;flex-direction:column;gap:4px;}
+.mobile-menu button{background:none;border:none;color:rgba(255,255,255,.75);font-family:'Tajawal',sans-serif;font-size:.9rem;padding:10px 14px;border-radius:8px;cursor:pointer;text-align:right;transition:all .2s;}
+.mobile-menu button:hover,.mobile-menu button.nav-active{background:rgba(78,205,180,.1);color:var(--mint);}
+@media(max-width:680px){.nav-links{display:none;}.nav-start{display:none;}.nav-hamburger{display:block;}}
+
+/* ════════ SHARED COMPONENTS ════════ */
+.content-wrap{max-width:880px;margin:0 auto;padding:56px 20px 80px;}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:18px;margin-top:56px;}
+.sh:first-child{margin-top:0;}
+.sh-num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9rem;color:#fff;flex-shrink:0;}
+.sh h2{font-size:1.5rem;font-weight:800;color:var(--ink);}
+.divider{height:3px;border-radius:2px;margin-bottom:24px;}
+.card{background:var(--white);border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px;}
+.card p,.card li{font-family:'Tajawal',sans-serif;font-size:.95rem;color:var(--mid);line-height:2.05;}
+.card ul{list-style:none;padding:0;}
+.card ul li{display:flex;align-items:flex-start;gap:9px;margin-bottom:6px;}
+.card ul li::before{content:'◈';flex-shrink:0;margin-top:4px;font-size:.75rem;}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:11px;display:flex;align-items:center;gap:7px;}
+.hl{padding:1px 7px;border-radius:4px;font-weight:700;}
+.callout{display:flex;gap:12px;align-items:flex-start;border-radius:11px;padding:16px 18px;margin-bottom:18px;}
+.callout-ico{font-size:1.35rem;flex-shrink:0;}
+.callout-txt{font-family:'Tajawal',sans-serif;font-size:.9rem;color:var(--mid);line-height:1.9;}
+.callout-txt strong{color:var(--text);}
+
+/* LESSON HERO */
+.lesson-hero{padding:60px 20px 72px;text-align:center;position:relative;overflow:hidden;}
+.lesson-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 110%,rgba(78,205,180,.1),transparent);pointer-events:none;}
+.lesson-chip{display:inline-block;padding:5px 18px;border-radius:50px;font-size:.73rem;font-weight:700;letter-spacing:2px;margin-bottom:18px;font-family:'Tajawal',sans-serif;}
+.lesson-hero h1{font-size:clamp(1.9rem,5.5vw,3.2rem);font-weight:900;color:#fff;margin-bottom:10px;line-height:1.25;}
+.lesson-hero h1 span{opacity:.85;}
+.lesson-hero p{font-family:'Tajawal',sans-serif;font-size:.98rem;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto 24px;line-height:1.9;}
+.obj-row{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;}
+.obj-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.78);padding:6px 14px;border-radius:7px;font-size:.77rem;font-family:'Tajawal',sans-serif;}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+@media(max-width:560px){.two-col{grid-template-columns:1fr;}}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;margin-bottom:18px;}
+.tbl-wrap table{width:100%;border-collapse:separate;border-spacing:0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
+.tbl-wrap thead tr th{padding:14px 18px;font-size:.88rem;font-weight:700;text-align:right;font-family:'Tajawal',sans-serif;color:#fff;}
+.tbl-wrap tbody tr{background:#fff;}
+.tbl-wrap tbody tr:nth-child(even){background:#f4fbff;}
+.tbl-wrap tbody tr:hover{transition:background .2s;}
+.tbl-wrap tbody td{padding:12px 18px;font-family:'Tajawal',sans-serif;font-size:.88rem;color:var(--mid);text-align:right;border-bottom:1px solid var(--border);}
+.tbl-wrap tbody td:first-child{font-weight:700;color:var(--text);}
+
+/* SUMMARY BOX */
+.sum-box{border-radius:20px;padding:38px 30px;color:#fff;position:relative;overflow:hidden;margin-top:56px;}
+.sum-box::before{content:'🔬';font-size:9rem;position:absolute;bottom:-28px;left:-18px;opacity:.04;pointer-events:none;}
+.sum-hdr{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+.sum-hdr-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;background:rgba(255,255,255,.15);}
+.sum-hdr h2{font-size:1.5rem;font-weight:800;}
+.sum-hdr p{font-size:.82rem;color:rgba(255,255,255,.5);font-family:'Tajawal',sans-serif;}
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:14px;}
+.sum-pt{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px 16px;}
+.sum-n{font-size:1.9rem;font-weight:900;line-height:1;margin-bottom:7px;}
+.sum-pt h4{font-size:.9rem;font-weight:700;margin-bottom:5px;}
+.sum-pt p{font-family:'Tajawal',sans-serif;font-size:.8rem;color:rgba(255,255,255,.58);line-height:1.8;}
+.sum-final{margin-top:20px;border-radius:11px;padding:16px 20px;font-family:'Tajawal',sans-serif;font-size:.95rem;color:rgba(255,255,255,.82);line-height:1.95;text-align:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);}
+
+/* GAMES */
+.games-section{padding:60px 20px 90px;}
+.games-wrap{max-width:880px;margin:0 auto;}
+.games-head{text-align:center;margin-bottom:44px;}
+.games-kicker{display:inline-block;padding:5px 18px;border-radius:50px;font-size:.73rem;font-weight:700;letter-spacing:2px;margin-bottom:14px;font-family:'Tajawal',sans-serif;}
+.games-head h2{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:900;color:var(--ink);margin-bottom:7px;}
+.games-head p{font-family:'Tajawal',sans-serif;color:var(--mid);font-size:.93rem;}
+.scoreboard{border-radius:16px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-bottom:32px;}
+.sb-total .sb-num{font-size:2.6rem;font-weight:900;line-height:1;}
+.sb-total .sb-lbl{font-family:'Tajawal',sans-serif;font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:3px;}
+.sb-parts{display:flex;gap:20px;flex-wrap:wrap;}
+.sb-part{text-align:center;}
+.sb-part .sb-pnum{font-size:1.5rem;font-weight:900;}
+.sb-part .sb-plbl{font-family:'Tajawal',sans-serif;font-size:.72rem;color:rgba(255,255,255,.4);}
+.sb-medal{font-size:2.3rem;display:none;}
+.game-box{background:var(--white);border-radius:18px;padding:30px 28px;box-shadow:var(--shadow);margin-bottom:24px;}
+.game-box-hdr{display:flex;align-items:center;gap:12px;margin-bottom:5px;}
+.game-box-ico{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;color:#fff;}
+.game-box-hdr h3{font-size:1.25rem;font-weight:800;color:var(--ink);}
+.game-box-hdr p{font-family:'Tajawal',sans-serif;font-size:.8rem;color:#7a9aaa;}
+.g-prog-txt{margin-right:auto;font-size:.82rem;font-weight:700;font-family:'Tajawal',sans-serif;}
+.prog-bar-wrap{border-radius:50px;height:6px;margin:14px 0 22px;overflow:hidden;}
+.prog-bar{height:100%;border-radius:50px;transition:width .5s ease;}
+.g-anim{animation:gIn .35s ease;}
+@keyframes gIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.q-text{font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:18px;line-height:1.75;}
+.opts-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:12px;}
+@media(max-width:520px){.opts-grid{grid-template-columns:1fr;}}
+.opt-btn{background:var(--sky);border:2px solid var(--border);border-radius:11px;padding:12px 14px;font-size:.88rem;font-weight:600;color:var(--text);font-family:'Cairo',sans-serif;cursor:pointer;text-align:right;transition:all .2s;line-height:1.5;}
+.opt-btn:hover:not(:disabled){background:#c8e8f8;border-color:var(--blue-lt);transform:translateY(-2px);}
+.opt-btn.correct{background:#d0f4e8!important;border-color:var(--teal-lt)!important;color:#0a4030!important;}
+.opt-btn.wrong{background:var(--rose-lt)!important;border-color:var(--rose)!important;color:#5a0818!important;}
+.opt-btn.reveal{background:#d0f4e8;border-color:var(--teal-lt);color:#0a4030;}
+.opt-btn:disabled{cursor:default;}
+.exp-box{border-radius:9px;padding:13px 16px;font-family:'Tajawal',sans-serif;font-size:.88rem;line-height:1.9;margin-top:11px;animation:gIn .3s ease;}
+.exp-ok{background:#e0faf3;border:1px solid var(--mint-lt);color:#0a3828;}
+.exp-bad{background:var(--rose-lt);border:1px solid #e8b0c0;color:#500818;}
+.nxt-btn{border:none;padding:10px 26px;border-radius:50px;font-size:.88rem;font-weight:700;font-family:'Cairo',sans-serif;cursor:pointer;margin-top:13px;transition:all .2s;}
+.nxt-btn:hover{transform:translateY(-2px);}
+.tf-stmt{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:20px;line-height:1.75;text-align:center;border-radius:11px;padding:16px 18px;}
+.tf-btns{display:flex;gap:12px;justify-content:center;margin-bottom:12px;}
+.tf-btn{width:120px;height:54px;border-radius:12px;border:2px solid transparent;font-size:1rem;font-weight:800;font-family:'Cairo',sans-serif;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:7px;}
+.tf-t{background:#d0f4e8;color:#0a4030;border-color:var(--teal-lt);}
+.tf-f{background:var(--rose-lt);color:#5a0818;border-color:#e8b0c0;}
+.tf-btn:hover:not(:disabled){transform:scale(1.05);}
+.tf-btn:disabled{cursor:default;opacity:.7;}
+.tf-btn.sel-ok{background:var(--teal-lt)!important;color:#fff!important;border-color:var(--teal-lt)!important;transform:scale(1.08);}
+.tf-btn.sel-bad{background:var(--rose)!important;color:#fff!important;border-color:var(--rose)!important;}
+.tf-btn.rev-ok{background:var(--teal-lt)!important;color:#fff!important;border-color:var(--teal-lt)!important;}
+.game-result{display:none;text-align:center;padding:20px;border-radius:12px;margin-top:16px;}
+.final-panel{display:none;margin-top:36px;border-radius:20px;padding:38px 30px;text-align:center;color:#fff;}
+.final-panel .fp-medal{font-size:4.5rem;margin-bottom:12px;}
+.final-panel h2{font-size:1.9rem;font-weight:900;margin-bottom:8px;}
+.final-panel p{font-family:'Tajawal',sans-serif;color:rgba(255,255,255,.65);font-size:.98rem;margin-bottom:22px;line-height:1.9;max-width:460px;margin-left:auto;margin-right:auto;}
+.final-score{font-size:3.2rem;font-weight:900;margin-bottom:24px;}
+.reset-btn{border:none;padding:13px 36px;border-radius:50px;font-size:.95rem;font-weight:700;font-family:'Cairo',sans-serif;cursor:pointer;color:#fff;transition:all .2s;}
+.reset-btn:hover{transform:translateY(-3px);}
+
+/* FOOTER */
+.site-footer{background:var(--ink);padding:40px 20px 28px;}
+.sf-inner{max-width:880px;margin:0 auto;}
+.sf-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px;}
+.sf-links button{background:none;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:7px 16px;border-radius:50px;font-family:'Tajawal',sans-serif;font-size:.82rem;cursor:pointer;transition:all .2s;}
+.sf-links button:hover{color:var(--mint);border-color:rgba(78,205,180,.3);}
+.sf-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:18px;}
+.sf-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sf-copy{font-family:'Tajawal',sans-serif;font-size:.8rem;color:rgba(255,255,255,.32);}
+.sf-credit{font-family:'Tajawal',sans-serif;font-size:.88rem;color:rgba(255,255,255,.48);text-align:center;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05);}
+.sf-credit strong{color:var(--mint);}
+
+/* ════════ HOME PAGE ════════ */
+.home-hero{
+  background:linear-gradient(145deg,var(--ink) 0%,var(--navy) 40%,#0a3050 70%,#082a1e 100%);
+  padding:90px 20px 110px;text-align:center;position:relative;overflow:hidden;
+  min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.home-hero::before,.home-hero::after{content:'';position:absolute;border-radius:50%;pointer-events:none;}
+.home-hero::before{width:420px;height:420px;background:radial-gradient(circle,rgba(30,172,144,.12),transparent);top:-80px;right:-80px;animation:pulse 9s ease-in-out infinite;}
+.home-hero::after{width:280px;height:280px;background:radial-gradient(circle,rgba(45,144,200,.1),transparent);bottom:-40px;left:-40px;animation:pulse 12s ease-in-out infinite reverse;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+.hh-dna{position:absolute;opacity:.06;font-size:4.5rem;pointer-events:none;animation:fdrift ease-in-out infinite;}
+@keyframes fdrift{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-16px) rotate(5deg);}}
+.hh-dna:nth-child(1){bottom:12%;right:6%;animation-duration:10s;}
+.hh-dna:nth-child(2){top:14%;left:5%;font-size:3rem;animation-duration:13s;animation-delay:-5s;}
+
+.hh-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(78,205,180,.12);border:1px solid rgba(78,205,180,.28);color:var(--mint);font-size:.75rem;font-weight:700;padding:6px 16px;border-radius:50px;letter-spacing:2px;margin-bottom:22px;font-family:'Tajawal',sans-serif;animation:fadein 1s ease;}
+.hh-dot{width:6px;height:6px;background:var(--mint);border-radius:50%;animation:blink 2s ease-in-out infinite;}
+@keyframes fadein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+.home-hero h1{font-size:clamp(2rem,7vw,4.2rem);font-weight:900;color:#fff;margin-bottom:16px;line-height:1.2;animation:fadein 1s ease .12s both;}
+.home-hero h1 em{color:var(--mint);font-style:normal;}
+.home-hero h1 span{color:#6cc4f4;}
+.home-hero .hh-sub{color:rgba(255,255,255,.58);font-family:'Tajawal',sans-serif;font-size:1.05rem;max-width:560px;margin:0 auto 32px;line-height:2;animation:fadein 1s ease .25s both;}
+
+.hh-stats{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap;margin-bottom:36px;animation:fadein 1s ease .38s both;}
+.hh-stat{text-align:center;}
+.hh-stat-num{font-size:1.9rem;font-weight:900;color:#fff;line-height:1;}
+.hh-stat-lbl{font-family:'Tajawal',sans-serif;font-size:.73rem;color:rgba(255,255,255,.42);}
+.hh-sep{width:1px;height:36px;background:rgba(255,255,255,.12);}
+
+.hh-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadein 1s ease .5s both;}
+.btn-hero-p{background:linear-gradient(135deg,var(--teal-lt),var(--blue-lt));color:#fff;padding:14px 32px;border-radius:50px;border:none;font-weight:700;font-size:.95rem;font-family:'Cairo',sans-serif;cursor:pointer;box-shadow:0 7px 26px rgba(30,172,144,.38);transition:all .3s;}
+.btn-hero-p:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(30,172,144,.48);}
+.btn-hero-s{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.82);padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;font-family:'Cairo',sans-serif;cursor:pointer;transition:all .3s;}
+.btn-hero-s:hover{background:rgba(255,255,255,.13);transform:translateY(-2px);}
+
+.hh-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.28);font-size:.7rem;font-family:'Tajawal',sans-serif;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.hh-scroll::after{content:'';width:1px;height:24px;background:linear-gradient(rgba(255,255,255,.25),transparent);display:block;animation:sa 2s ease-in-out infinite;}
+@keyframes sa{0%,100%{transform:scaleY(1);}50%{transform:scaleY(.35);}}
+
+/* HOME LESSON CARDS */
+.home-lessons{padding:80px 20px;}
+.sec-head{text-align:center;margin-bottom:52px;}
+.sec-kicker{display:inline-block;background:var(--mint-pale);color:var(--teal);font-size:.73rem;font-weight:700;padding:5px 16px;border-radius:50px;letter-spacing:2px;margin-bottom:12px;font-family:'Tajawal',sans-serif;}
+.sec-head h2{font-size:clamp(1.7rem,4.5vw,2.8rem);font-weight:900;color:var(--ink);margin-bottom:10px;}
+.sec-head p{font-family:'Tajawal',sans-serif;color:var(--mid);font-size:.93rem;max-width:500px;margin:0 auto;line-height:1.9;}
+.lessons-grid{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+@media(max-width:660px){.lessons-grid{grid-template-columns:1fr;}}
+.lcard{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);transition:transform .3s,box-shadow .3s;cursor:pointer;display:flex;flex-direction:column;}
+.lcard:hover{transform:translateY(-7px);box-shadow:0 20px 56px rgba(7,24,40,.18);}
+.lcard-top{padding:28px 24px 22px;position:relative;overflow:hidden;flex:1;}
+.lcard-top::before{content:'';position:absolute;bottom:-28px;left:-28px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.07);}
+.lcard-num{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.8rem;color:#fff;margin-bottom:12px;}
+.lcard-ico{font-size:2.5rem;margin-bottom:9px;}
+.lcard-top h3{font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.3;}
+.lcard-top p{font-family:'Tajawal',sans-serif;font-size:.83rem;color:rgba(255,255,255,.7);line-height:1.75;}
+.lcard-bot{background:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;}
+.lcard-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.lcard-tag{background:var(--off);border:1px solid var(--border);color:var(--mid);padding:3px 10px;border-radius:20px;font-size:.7rem;font-family:'Tajawal',sans-serif;}
+.lcard-arrow{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.lcard:hover .lcard-arrow{transform:translateX(-4px);}
+.lc1 .lcard-top{background:linear-gradient(135deg,#071a34,var(--blue));}
+.lc2 .lcard-top{background:linear-gradient(135deg,#072218,var(--teal));}
+.lc3 .lcard-top{background:linear-gradient(135deg,#2a1400,var(--amber));}
+.lc4 .lcard-top{background:linear-gradient(135deg,#1e0812,var(--rose));}
+.lc1 .lcard-arrow{background:var(--sky);color:var(--blue);}
+.lc2 .lcard-arrow{background:var(--mint-lt);color:var(--teal);}
+.lc3 .lcard-arrow{background:var(--amber-lt);color:#8a4800;}
+.lc4 .lcard-arrow{background:var(--rose-lt);color:#6a1030;}
+
+/* HOME FEATURES */
+.home-features{padding:70px 20px;background:linear-gradient(135deg,var(--mint-pale),var(--sky));}
+.features-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;}
+.feat-card{background:#fff;border-radius:16px;padding:26px 20px;text-align:center;box-shadow:var(--shadow);transition:transform .25s;}
+.feat-card:hover{transform:translateY(-4px);}
+.feat-ico{font-size:2.3rem;margin-bottom:12px;}
+.feat-title{font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:6px;}
+.feat-desc{font-family:'Tajawal',sans-serif;font-size:.83rem;color:var(--mid);line-height:1.8;}
+
+/* ════════ ADN COLOR ════════ */
+.adn-hero{background:linear-gradient(135deg,var(--ink) 0%,#0d2a4a 55%,#083060 100%);}
+.adn-chip{background:var(--blue);}
+.adn-num{background:var(--blue-lt);}
+.adn-div{background:linear-gradient(90deg,var(--blue-lt),transparent);}
+.adn-bl{border-right:5px solid var(--blue-lt);}
+.adn-h3{color:var(--blue);}
+.adn-hl{background:var(--sky);color:#083060;}
+.adn-li::before{color:var(--blue-lt);}
+.adn-cl{background:var(--sky);border:1px solid #a0ccee;}
+.adn-sum{background:linear-gradient(135deg,var(--ink),#0a2848);}
+.adn-sn{color:#6cc4f4;}
+.adn-gs{background:var(--sky);border:1px solid #a0ccee;}
+.adn-gs-kicker{background:#e0f0fa;color:var(--blue);border-radius:50px;font-family:'Tajawal',sans-serif;font-size:.73rem;font-weight:700;letter-spacing:2px;padding:5px 16px;display:inline-block;margin-bottom:18px;}
+.adn-games-bg{background:linear-gradient(180deg,#edf5fc,#e0f0fa);}
+.adn-sb{background:var(--navy);}
+.adn-sb-num{color:#6cc4f4;}
+.adn-sb-pnum{color:#a0d8f8;}
+.adn-g-ico{background:var(--blue-lt);}
+.adn-g-prog-c{color:var(--blue-lt);}
+.adn-g-bar{background:linear-gradient(90deg,var(--blue),var(--blue-lt));}
+.adn-g-prog-wrap{background:var(--sky);}
+.adn-tf-prog-c{color:#d48810;}
+.adn-tf-bar{background:linear-gradient(90deg,var(--amber),var(--rose));}
+.adn-tf-prog-wrap{background:var(--amber-lt);}
+.adn-g2ico{background:var(--amber);}
+.adn-tf-stmt{background:var(--sky);border:1px solid var(--border);}
+.adn-final{background:linear-gradient(135deg,var(--ink),#0a2848);}
+.adn-final-score{color:#6cc4f4;}
+.adn-reset{background:var(--blue-lt);}
+.adn-nxt{background:var(--blue-lt);color:#fff;}
+.adn-nxt-tf{background:var(--amber);color:#fff;}
+
+/* ════════ MEIOSE COLOR ════════ */
+.mei-hero{background:linear-gradient(135deg,var(--ink) 0%,#082a20 55%,#0d4030 100%);}
+.mei-chip{background:var(--teal);}
+.mei-num{background:var(--teal-lt);}
+.mei-div{background:linear-gradient(90deg,var(--teal-lt),transparent);}
+.mei-bl{border-right:5px solid var(--teal-lt);}
+.mei-h3{color:var(--teal);}
+.mei-hl{background:var(--mint-lt);color:#084030;}
+.mei-li::before{color:var(--mint);}
+.mei-cl{background:var(--mint-pale);border:1px solid var(--mint-lt);}
+.mei-sum{background:linear-gradient(135deg,var(--ink),#082a20);}
+.mei-sn{color:var(--mint);}
+.mei-games-bg{background:linear-gradient(180deg,#e8faf5,#d8f4ec);}
+.mei-sb{background:var(--ink);}
+.mei-sb-num{color:var(--mint);}
+.mei-sb-pnum{color:var(--mint-lt);}
+.mei-g-ico{background:var(--teal-lt);}
+.mei-g-bar{background:linear-gradient(90deg,var(--teal),var(--mint));}
+.mei-g-prog-wrap{background:var(--mint-pale);}
+.mei-g-prog-c{color:var(--teal-lt);}
+.mei-g2ico{background:var(--amber);}
+.mei-tf-bar{background:linear-gradient(90deg,var(--amber),var(--rose));}
+.mei-tf-prog-wrap{background:var(--amber-lt);}
+.mei-tf-prog-c{color:var(--amber);}
+.mei-tf-stmt{background:var(--mint-pale);border:1px solid var(--mint-lt);}
+.mei-final{background:linear-gradient(135deg,var(--ink),#082a20);}
+.mei-final-score{color:var(--mint);}
+.mei-reset{background:var(--teal-lt);}
+.mei-nxt{background:var(--teal-lt);color:#fff;}
+.mei-nxt-tf{background:var(--amber);color:#fff;}
+/* Phase timeline */
+.phases{display:flex;flex-direction:column;}
+.ph-item{display:flex;gap:0;position:relative;}
+.ph-line{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:50px;}
+.ph-dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;z-index:1;box-shadow:0 3px 12px rgba(0,0,0,.12);}
+.ph-conn{flex:1;width:3px;background:linear-gradient(to bottom,rgba(78,205,180,.35),rgba(78,205,180,.08));min-height:16px;}
+.ph-item:last-child .ph-conn{display:none;}
+.ph-body{background:var(--white);border-radius:13px;padding:18px 20px;margin-bottom:14px;flex:1;box-shadow:var(--shadow);margin-right:12px;}
+.ph-body h4{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:7px;}
+.ph-body p{font-family:'Tajawal',sans-serif;font-size:.9rem;color:var(--mid);line-height:1.9;}
+.ph-tag{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 11px;border-radius:50px;margin-bottom:7px;font-family:'Tajawal',sans-serif;}
+.ph-div-label{border-radius:9px;padding:9px 16px;margin:14px 0;display:flex;align-items:center;gap:9px;font-size:.88rem;}
+
+/* ════════ PHENOTYPE COLOR ════════ */
+.phe-hero{background:linear-gradient(135deg,#1a0828 0%,#2a1050 55%,#3a1878 100%);}
+.phe-chip{background:#6c3faa;}
+.phe-num{background:#8050cc;}
+.phe-div{background:linear-gradient(90deg,#8050cc,transparent);}
+.phe-bl{border-right:5px solid #8050cc;}
+.phe-h3{color:#5a30a0;}
+.phe-hl{background:#ede0ff;color:#2a0870;}
+.phe-li::before{color:#8050cc;}
+.phe-cl{background:#ede0ff;border:1px solid #c0a0ee;}
+.phe-sum{background:linear-gradient(135deg,#1a0828,#2a0860);}
+.phe-sn{color:#c0a0f8;}
+.phe-games-bg{background:linear-gradient(180deg,#f0ebff,#e8e0f8);}
+.phe-sb{background:#1a0828;}
+.phe-sb-num{color:#c0a0f8;}
+.phe-sb-pnum{color:#a080e8;}
+.phe-g-ico{background:#8050cc;}
+.phe-g-bar{background:linear-gradient(90deg,#6c3faa,#a070e0);}
+.phe-g-prog-wrap{background:#ede0ff;}
+.phe-g-prog-c{color:#8050cc;}
+.phe-g2ico{background:var(--amber);}
+.phe-tf-bar{background:linear-gradient(90deg,var(--amber),var(--rose));}
+.phe-tf-prog-wrap{background:var(--amber-lt);}
+.phe-tf-prog-c{color:var(--amber);}
+.phe-tf-stmt{background:#ede0ff;border:1px solid #c0a0ee;}
+.phe-final{background:linear-gradient(135deg,#1a0828,#2a0860);}
+.phe-final-score{color:#c0a0f8;}
+.phe-reset{background:#8050cc;}
+.phe-nxt{background:#8050cc;color:#fff;}
+.phe-nxt-tf{background:var(--amber);color:#fff;}
+/* Punnett table */
+.punnett-tbl{display:inline-grid;grid-template-columns:60px 1fr 1fr;grid-template-rows:50px 1fr 1fr;gap:3px;border-radius:11px;overflow:hidden;box-shadow:var(--shadow);}
+.p-corner{background:#e0d0f8;}
+.p-hdr{background:#3a1878;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;}
+.p-cell{background:#f8f4ff;display:flex;align-items:center;justify-content:center;padding:12px;font-weight:700;font-size:1rem;border:2px solid #e0d0f8;min-width:80px;min-height:72px;flex-direction:column;gap:3px;}
+.p-cell.pdom{color:#3a1878;background:#ede0ff;}
+.p-cell.phet{color:#1a5030;background:#e0f8ec;}
+.p-cell.prec{color:#5a1020;background:var(--rose-lt);}
+.p-cell span:last-child{font-size:.65rem;font-family:'Tajawal',sans-serif;opacity:.75;}
+
+/* ════════ MUTATIONS COLOR ════════ */
+.mut-hero{background:linear-gradient(135deg,#071a0a 0%,#0e2e10 55%,#1a4a18 100%);}
+.mut-chip{background:#2a7a30;}
+.mut-num{background:#3aaa40;}
+.mut-div{background:linear-gradient(90deg,#3aaa40,transparent);}
+.mut-bl{border-right:5px solid #3aaa40;}
+.mut-h3{color:#226830;}
+.mut-hl{background:#d8f4d0;color:#0a3010;}
+.mut-li::before{color:#3aaa40;}
+.mut-cl{background:#e8fae0;border:1px solid #a0d890;}
+.mut-sum{background:linear-gradient(135deg,#071a0a,#0a2e0c);}
+.mut-sn{color:#7add7a;}
+.mut-games-bg{background:linear-gradient(180deg,#eaf8e0,#e0f4d8);}
+.mut-sb{background:#071a0a;}
+.mut-sb-num{color:#7add7a;}
+.mut-sb-pnum{color:#a0e890;}
+.mut-g-ico{background:#3aaa40;}
+.mut-g-bar{background:linear-gradient(90deg,#2a7a30,#4aaa50);}
+.mut-g-prog-wrap{background:#e8fae0;}
+.mut-g-prog-c{color:#3aaa40;}
+.mut-g2ico{background:var(--amber);}
+.mut-tf-bar{background:linear-gradient(90deg,var(--amber),var(--rose));}
+.mut-tf-prog-wrap{background:var(--amber-lt);}
+.mut-tf-prog-c{color:var(--amber);}
+.mut-tf-stmt{background:#e8fae0;border:1px solid #a0d890;}
+.mut-final{background:linear-gradient(135deg,#071a0a,#0a2e0c);}
+.mut-final-score{color:#7add7a;}
+.mut-reset{background:#3aaa40;}
+.mut-nxt{background:#3aaa40;color:#fff;}
+.mut-nxt-tf{background:var(--amber);color:#fff;}
+/* Mutation type cards */
+.mut-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+@media(max-width:560px){.mut-cards{grid-template-columns:1fr;}}
+.mtc{border-radius:14px;padding:22px 18px;overflow:hidden;position:relative;}
+.mtc::before{content:'';position:absolute;bottom:-20px;left:-20px;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.05);}
+.mtc-tag{display:inline-block;background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.9);padding:3px 11px;border-radius:50px;font-size:.7rem;font-family:'Tajawal',sans-serif;margin-bottom:9px;}
+.mtc-ico{font-size:2rem;margin-bottom:9px;}
+.mtc h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:7px;}
+.mtc p{font-family:'Tajawal',sans-serif;font-size:.82rem;color:rgba(255,255,255,.72);line-height:1.8;}
+.mtc1{background:linear-gradient(135deg,#0e2e10,#2a7a30);}
+.mtc2{background:linear-gradient(135deg,#071a30,#1a5a90);}
+.mtc3{background:linear-gradient(135deg,#2a1200,#6a3000);}
+.mtc4{background:linear-gradient(135deg,#1a0820,#5a2888);}
+/* DNA vis */
+.dna-vis{background:var(--white);border-radius:16px;padding:28px 20px;box-shadow:var(--shadow);margin-bottom:18px;text-align:center;}
+.dv-title{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:22px;font-family:'Tajawal',sans-serif;}
+.dv-cols{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.dv-col{flex:1;min-width:170px;max-width:240px;}
+.dv-tag{font-size:.73rem;font-weight:700;padding:5px 12px;border-radius:50px;margin-bottom:14px;display:inline-block;font-family:'Tajawal',sans-serif;}
+.dv-norm{background:#d8f4d0;color:#0a3010;}
+.dv-mut{background:var(--rose-lt);color:#5a0818;}
+.dna-seq{display:flex;flex-direction:column;gap:4px;align-items:center;}
+.dna-row{display:flex;gap:3px;align-items:center;}
+.dbase{width:30px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;color:#fff;}
+.bA{background:#d84040;} .bT{background:#2d70c0;} .bG{background:#1a9870;} .bC{background:#d88800;}
+.dbase.mut-b{box-shadow:0 0 0 2px #b83050,0 0 10px rgba(184,48,80,.45);}
+.dbase.del-b{opacity:.2;border:2px dashed #b83050;}
+.dbond{width:12px;height:2px;background:repeating-linear-gradient(90deg,#b0c0cc 0,#b0c0cc 3px,transparent 3px,transparent 5px);}
+.dv-sub-lbl{font-size:.7rem;color:#8aaa9a;font-family:'Tajawal',sans-serif;margin-top:9px;}
+/* Causes */
+.causes{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px;}
+.cau-card{background:var(--white);border-radius:12px;padding:18px 14px;text-align:center;box-shadow:var(--shadow);transition:transform .22s;}
+.cau-card:hover{transform:translateY(-3px);}
+.cau-ico{font-size:2rem;margin-bottom:7px;}
+.cau-name{font-size:.85rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.cau-type{font-size:.68rem;font-family:'Tajawal',sans-serif;color:#7a9080;background:#e8f8e0;padding:2px 7px;border-radius:20px;}
+/* Effects table badges */
+.badge{display:inline-block;padding:3px 11px;border-radius:50px;font-size:.73rem;font-weight:700;font-family:'Tajawal',sans-serif;}
+.b-neg{background:var(--rose-lt);color:var(--rose);}
+.b-pos{background:#d8f4d0;color:#2a6830;}
+.b-neu{background:var(--sky);color:var(--blue);}
+
+/* ════════ MISC ════════ */
+.concept-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+@media(max-width:540px){.concept-pair{grid-template-columns:1fr;}}
+.con-box{border-radius:14px;padding:22px 18px;text-align:center;}
+.con-geno{background:linear-gradient(135deg,#1a0828,#4a2088);color:#fff;}
+.con-pheno{background:linear-gradient(135deg,#072a18,#1a7040);color:#fff;}
+.con-tag{display:inline-block;background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.9);padding:3px 12px;border-radius:50px;font-size:.7rem;font-family:'Tajawal',sans-serif;margin-bottom:9px;}
+.con-ico{font-size:2.5rem;margin-bottom:9px;}
+.con-box h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:7px;}
+.con-box p{font-family:'Tajawal',sans-serif;font-size:.83rem;color:rgba(255,255,255,.72);line-height:1.8;}
+/* Relation flow */
+.rel-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;background:var(--white);border-radius:16px;padding:28px 20px;box-shadow:var(--shadow);margin-bottom:18px;text-align:center;}
+.rel-box{border-radius:12px;padding:14px 16px;min-width:110px;}
+.rel-box .rb-ico{font-size:1.5rem;margin-bottom:5px;}
+.rel-box .rb-lbl{font-size:.78rem;font-weight:700;color:#fff;}
+.rel-box .rb-sub{font-size:.66rem;color:rgba(255,255,255,.68);font-family:'Tajawal',sans-serif;margin-top:2px;}
+.rb1{background:linear-gradient(135deg,#1a0828,#5a30a0);}
+.rb2{background:linear-gradient(135deg,#3a1878,#8050cc);}
+.rb3{background:linear-gradient(135deg,#072a18,#1a8a60);}
+.rb4{background:linear-gradient(135deg,#3a1400,#c04000);}
+.rel-arr{font-size:1.4rem;color:#b0a8c8;padding:0 7px;margin-bottom:8px;}
+.rel-plus{font-size:1.1rem;color:#b0a8c8;padding:0 5px;margin-bottom:8px;}
+/* Term grid */
+.term-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px;}
+.term-card{background:var(--white);border-radius:11px;padding:16px 14px;text-align:center;box-shadow:var(--shadow);}
+.tc-ico{font-size:1.7rem;margin-bottom:7px;}
+.tc-word{font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:3px;}
+.tc-fr{font-size:.7rem;color:#8a8aaa;font-family:'Tajawal',sans-serif;margin-bottom:5px;}
+.tc-def{font-size:.75rem;color:var(--mid);font-family:'Tajawal',sans-serif;line-height:1.65;}
+/* Bio cards */
+.bio-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:18px;}
+@media(max-width:560px){.bio-cards{grid-template-columns:1fr;}}
+.bio-card{border-radius:13px;padding:20px 16px;text-align:center;}
+.bc1{background:linear-gradient(135deg,#e8f8e8,#d0f4dc);border:1px solid #a0d8b0;}
+.bc2{background:linear-gradient(135deg,#e0f0fa,#cce8f8);border:1px solid #9ac8e8;}
+.bc3{background:linear-gradient(135deg,var(--amber-lt),#ffe090);border:1px solid #e0c060;}
+.bio-card .bci{font-size:1.9rem;margin-bottom:9px;}
+.bio-card h4{font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:5px;}
+.bio-card p{font-family:'Tajawal',sans-serif;font-size:.8rem;color:var(--mid);line-height:1.8;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-icon">🧬</div>
+    <div>
+      <div class="nav-logo-text">أسس التنوع البيولوجي</div>
+      <div class="nav-logo-sub">السنة 2 ثانوي — العلوم التجريبية</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <button onclick="showPage('home')" id="nav-home" class="nav-active">الرئيسية</button>
+    <button onclick="showPage('adn')" id="nav-adn">ADN</button>
+    <button onclick="showPage('meiose')" id="nav-meiose">الانقسام المنصف</button>
+    <button onclick="showPage('phenotype')" id="nav-phenotype">النمط الظاهري</button>
+    <button onclick="showPage('mutations')" id="nav-mutations">الطفرات</button>
+  </div>
+  <button class="nav-start" onclick="showPage('adn')">ابدأ التعلم ←</button>
+  <button class="nav-hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button onclick="showPage('home');toggleMenu()" id="mnav-home" class="nav-active">🏠 الرئيسية</button>
+  <button onclick="showPage('adn');toggleMenu()" id="mnav-adn">🧬 ADN وتضاعفه</button>
+  <button onclick="showPage('meiose');toggleMenu()" id="mnav-meiose">🔬 الانقسام المنصف</button>
+  <button onclick="showPage('phenotype');toggleMenu()" id="mnav-phenotype">👁️ النمط الظاهري</button>
+  <button onclick="showPage('mutations');toggleMenu()" id="mnav-mutations">⚡ الطفرات</button>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <div class="home-hero">
+    <div class="hh-dna">🧬</div><div class="hh-dna">🔬</div>
+    <div class="hh-badge"><span class="hh-dot"></span>منهاج السنة الثانية ثانوي — الجزائر</div>
+    <h1>أسس <em>التنوع</em><br><span>البيولوجي</span></h1>
+    <p class="hh-sub">تعلّم علم الوراثة والأحياء بطريقة تفاعلية ومبسّطة — من الـ ADN إلى الطفرات، مع اختبارات وألعاب تعليمية لكل درس.</p>
+    <div class="hh-stats">
+      <div class="hh-stat"><div class="hh-stat-num">4</div><div class="hh-stat-lbl">دروس</div></div>
+      <div class="hh-sep"></div>
+      <div class="hh-stat"><div class="hh-stat-num">60</div><div class="hh-stat-lbl">سؤال تفاعلي</div></div>
+      <div class="hh-sep"></div>
+      <div class="hh-stat"><div class="hh-stat-num">100%</div><div class="hh-stat-lbl">مجاني</div></div>
+      <div class="hh-sep"></div>
+      <div class="hh-stat"><div class="hh-stat-num">🇩🇿</div><div class="hh-stat-lbl">المنهاج الجزائري</div></div>
+    </div>
+    <div class="hh-btns">
+      <button class="btn-hero-p" onclick="showPage('adn')">🚀 ابدأ من الدرس الأول</button>
+      <button class="btn-hero-s" onclick="document.getElementById('home-lessons').scrollIntoView({behavior:'smooth'})">📚 عرض الدروس</button>
+    </div>
+    <div class="hh-scroll">↓</div>
+  </div>
+
+  <!-- Lessons Grid -->
+  <section id="home-lessons" class="home-lessons">
+    <div class="sec-head">
+      <div class="sec-kicker">📖 الدروس</div>
+      <h2>الوحدات التعليمية</h2>
+      <p>أربعة دروس متكاملة تغطي كامل محور أسس التنوع البيولوجي وفق المنهاج الجزائري</p>
+    </div>
+    <div class="lessons-grid">
+      <div class="lcard lc1" onclick="showPage('adn')">
+        <div class="lcard-top">
+          <div class="lcard-num">01</div>
+          <div class="lcard-ico">🧬</div>
+          <h3>ADN وتضاعفه</h3>
+          <p>بنية الحمض النووي، تضاعفه الشبه محافظ، دور الإنزيمات، ومفهوم المورثة.</p>
+        </div>
+        <div class="lcard-bot">
+          <div class="lcard-tags"><span class="lcard-tag">البنية الجزيئية</span><span class="lcard-tag">التضاعف</span><span class="lcard-tag">القواعد الآزوتية</span></div>
+          <div class="lcard-arrow">←</div>
+        </div>
+      </div>
+      <div class="lcard lc2" onclick="showPage('meiose')">
+        <div class="lcard-top">
+          <div class="lcard-num">02</div>
+          <div class="lcard-ico">🔬</div>
+          <h3>الانقسام المنصف</h3>
+          <p>مراحل الميوز التفصيلية، العبور الوراثي، مقارنة مع الانقسام المتساوي.</p>
+        </div>
+        <div class="lcard-bot">
+          <div class="lcard-tags"><span class="lcard-tag">Méiose I & II</span><span class="lcard-tag">العبور الوراثي</span><span class="lcard-tag">الأمشاج</span></div>
+          <div class="lcard-arrow">←</div>
+        </div>
+      </div>
+      <div class="lcard lc3" onclick="showPage('phenotype')">
+        <div class="lcard-top">
+          <div class="lcard-num">03</div>
+          <div class="lcard-ico">👁️</div>
+          <h3>النمط الظاهري والوراثي</h3>
+          <p>الجينوتيب والفينوتيب، السيادة والتنحي، تأثير البيئة، مربع بونيت.</p>
+        </div>
+        <div class="lcard-bot">
+          <div class="lcard-tags"><span class="lcard-tag">Génotype</span><span class="lcard-tag">مربع بونيت</span><span class="lcard-tag">السيادة</span></div>
+          <div class="lcard-arrow">←</div>
+        </div>
+      </div>
+      <div class="lcard lc4" onclick="showPage('mutations')">
+        <div class="lcard-top">
+          <div class="lcard-num">04</div>
+          <div class="lcard-ico">⚡</div>
+          <h3>الطفرات</h3>
+          <p>أنواع الطفرات، أسبابها، آثارها على الكائن الحي، وعلاقتها بالتنوع.</p>
+        </div>
+        <div class="lcard-bot">
+          <div class="lcard-tags"><span class="lcard-tag">طفرة جينية</span><span class="lcard-tag">أسباب وآثار</span><span class="lcard-tag">التطور</span></div>
+          <div class="lcard-arrow">←</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="home-features">
+    <div class="sec-head" style="margin-bottom:40px;">
+      <div class="sec-kicker">✨ المميزات</div>
+      <h2>لماذا هذا الموقع؟</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card"><div class="feat-ico">🎮</div><div class="feat-title">ألعاب تفاعلية</div><div class="feat-desc">Quiz اختيار متعدد + صح/خطأ مع تصحيح فوري وشرح مفصّل لكل إجابة.</div></div>
+      <div class="feat-card"><div class="feat-ico">📱</div><div class="feat-title">متجاوب مع الهاتف</div><div class="feat-desc">تصميم يعمل بشكل مثالي على الهواتف والأجهزة اللوحية والحواسيب.</div></div>
+      <div class="feat-card"><div class="feat-ico">🔬</div><div class="feat-title">مخططات بصرية</div><div class="feat-desc">رسوم توضيحية لبنية ADN، الانقسام، مربع بونيت والطفرات.</div></div>
+      <div class="feat-card"><div class="feat-ico">🇩🇿</div><div class="feat-title">منهاج جزائري</div><div class="feat-desc">محتوى مُصمَّم خصيصاً للسنة الثانية ثانوي — شعبة العلوم التجريبية.</div></div>
+    </div>
+  </section>
+
+  <!-- Footer for home -->
+  <footer class="site-footer">
+    <div class="sf-inner">
+      <div class="sf-links">
+        <button onclick="showPage('adn')">🧬 ADN وتضاعفه</button>
+        <button onclick="showPage('meiose')">🔬 الانقسام المنصف</button>
+        <button onclick="showPage('phenotype')">👁️ النمط الظاهري والوراثي</button>
+        <button onclick="showPage('mutations')">⚡ الطفرات</button>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-bottom">
+        <span class="sf-copy">السنة الثانية ثانوي — شعبة العلوم التجريبية 🇩🇿</span>
+        <span class="sf-copy">جميع الحقوق محفوظة © 2024</span>
+      </div>
+      <div class="sf-credit">صُنع بكل فخر من طرف المبدعة <strong>الاء 💚</strong></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: ADN
+══════════════════════════════════ -->
+<div id="page-adn" class="page">
+  <header class="lesson-hero adn-hero">
+    <span class="lesson-chip adn-chip" style="color:#fff">الدرس 01 / 04</span>
+    <h1>ADN <span>وتضاعفه</span></h1>
+    <p>Acide DésoxyriboNucléique — بنية الحمض النووي وآلية تضاعفه الشبه محافظ</p>
+    <div class="obj-row">
+      <span class="obj-chip">📌 البنية الجزيئية</span>
+      <span class="obj-chip">🔬 القواعد الآزوتية</span>
+      <span class="obj-chip">🔄 التضاعف</span>
+      <span class="obj-chip">🧬 المورثة</span>
+    </div>
+  </header>
+
+  <div class="content-wrap">
+    <!-- 1. Définition -->
+    <div class="sh"><div class="sh-num adn-num">1</div><h2>تعريف ADN وموقعه</h2></div>
+    <div class="divider adn-div"></div>
+    <div class="card adn-bl">
+      <h3 class="adn-h3">🧬 ما هو ADN؟</h3>
+      <p>ADN (Acide DésoxyriboNucléique) هو <span class="hl adn-hl">الجزيء الحامل للمعلومة الوراثية</span> في جميع الكائنات الحية. يوجد أساساً في <strong>نواة الخلية</strong> مرتبطاً بالكروموسومات، وكذلك في المتقدرات والبلاستيدات الخضراء.</p>
+    </div>
+    <div class="callout adn-cl">
+      <span class="callout-ico">💡</span>
+      <div class="callout-txt"><strong>عند الإنسان:</strong> تحتوي كل خلية جسمية على 46 كروموسوم (2n=46) تحمل حوالي 3 مليارات زوج قاعدي من ADN. إذا مُدَّ ADN خلية واحدة لبلغ طوله حوالي <strong>2 متر</strong>!</div>
+    </div>
+
+    <!-- 2. Structure -->
+    <div class="sh"><div class="sh-num adn-num">2</div><h2>بنية جزيء ADN</h2></div>
+    <div class="divider adn-div"></div>
+    <div class="card adn-bl">
+      <h3 class="adn-h3">🔩 الوحدة الأساسية: النيوكليوتيد</h3>
+      <p>يتألف كل نيوكليوتيد من ثلاثة مكوّنات:</p>
+      <ul>
+        <li class="adn-li"><span class="hl adn-hl">سكر الديوكسيريبوز (Désoxyribose)</span> — 5 كربونات</li>
+        <li class="adn-li"><span class="hl adn-hl">مجموعة فوسفات (Phosphate)</span> — تربط النيوكليوتيدات ببعضها</li>
+        <li class="adn-li"><span class="hl adn-hl">قاعدة آزوتية (Base azotée)</span> — واحدة من الأربع أدناه</li>
+      </ul>
+    </div>
+    <div class="two-col">
+      <div class="card adn-bl">
+        <h3 class="adn-h3">🔤 القواعد الآزوتية الأربع</h3>
+        <ul>
+          <li class="adn-li" style="margin-bottom:8px;"><span style="background:#fde8e8;color:#8a1010;padding:2px 8px;border-radius:4px;font-weight:700;">A</span> — أدينين (Adénine)</li>
+          <li class="adn-li" style="margin-bottom:8px;"><span style="background:#ddeeff;color:#083060;padding:2px 8px;border-radius:4px;font-weight:700;">T</span> — ثيمين (Thymine)</li>
+          <li class="adn-li" style="margin-bottom:8px;"><span style="background:#d8f4e8;color:#084028;padding:2px 8px;border-radius:4px;font-weight:700;">G</span> — غوانين (Guanine)</li>
+          <li class="adn-li"><span style="background:#fff4cc;color:#6a3800;padding:2px 8px;border-radius:4px;font-weight:700;">C</span> — سيتوزين (Cytosine)</li>
+        </ul>
+      </div>
+      <div class="card" style="border-right:5px solid var(--grn-lt);">
+        <h3 style="color:var(--grn);">🔗 قاعدة التكامل (Chargaff)</h3>
+        <p style="margin-bottom:10px;">القواعد تترابط دائماً بالتكامل:</p>
+        <div style="background:var(--lime-pale);border-radius:9px;padding:12px 14px;text-align:center;font-weight:800;font-size:1.05rem;color:var(--grn);">A ≡ T &nbsp;&nbsp;|&nbsp;&nbsp; G ≡ C</div>
+        <p style="margin-top:10px;">A يرتبط بـ T بـ <strong>2 روابط هيدروجينية</strong><br>G يرتبط بـ C بـ <strong>3 روابط هيدروجينية</strong></p>
+      </div>
+    </div>
+    <div class="card adn-bl">
+      <h3 class="adn-h3">🌀 الحلزون المزدوج (Double Hélice)</h3>
+      <p>جزيء ADN عبارة عن <span class="hl adn-hl">شريطين متكاملين متوازيين ومتعاكسي الاتجاه</span> ملتويين معاً في شكل حلزوني مزدوج. الشريطان مترابطان بروابط هيدروجينية بين القواعد المتكاملة. اكتشفه واتسون وكريك عام 1953.</p>
+    </div>
+
+    <!-- 3. Réplication -->
+    <div class="sh"><div class="sh-num adn-num">3</div><h2>تضاعف ADN</h2></div>
+    <div class="divider adn-div"></div>
+    <div class="callout adn-cl">
+      <span class="callout-ico">⭐</span>
+      <div class="callout-txt"><strong>التضاعف شبه المحافظ (Réplication semi-conservative):</strong> كل جزيء ADN جديد يحتفظ بشريط واحد من الأصلي ويُركّب شريطاً جديداً مكمّلاً له. النتيجة: جزيئان ابن كل منهما يحمل شريطاً أصلياً وشريطاً جديداً.</div>
+    </div>
+    <div class="card adn-bl">
+      <h3 class="adn-h3">🔬 مراحل التضاعف</h3>
+      <ul>
+        <li class="adn-li"><strong>1. الفك (Dénaturation):</strong> إنزيم <span class="hl adn-hl">Hélicase</span> يفكّ الروابط الهيدروجينية ويفصل الشريطين</li>
+        <li class="adn-li"><strong>2. التركيب (Synthèse):</strong> إنزيم <span class="hl adn-hl">ADN Polymérase</span> يُضيف النيوكليوتيدات المكمّلة على كل شريط (من 3' إلى 5')</li>
+        <li class="adn-li"><strong>3. اللحام (Ligature):</strong> إنزيم <span class="hl adn-hl">ADN Ligase</span> يُوصّل القطع ويُكمّل الشريط الجديد</li>
+      </ul>
+    </div>
+    <div class="callout adn-cl">
+      <span class="callout-ico">🎯</span>
+      <div class="callout-txt"><strong>نتيجة التضاعف:</strong> من جزيء أم واحد → جزيئان ابن متطابقان تماماً. هذا يضمن نقل المعلومة الوراثية بدقة إلى الخلايا البنت عند انقسام الخلية.</div>
+    </div>
+
+    <!-- 4. Gène -->
+    <div class="sh"><div class="sh-num adn-num">4</div><h2>المورثة (الجين)</h2></div>
+    <div class="divider adn-div"></div>
+    <div class="card adn-bl">
+      <h3 class="adn-h3">🗺️ ما هي المورثة؟</h3>
+      <p>المورثة (Gène) هي <span class="hl adn-hl">قطعة من ADN تُرمِّز لبروتين أو RNA وظيفي</span>. تقع على موضع جيني محدد (Locus) على الكروموسوم. الجينوم البشري يحتوي على حوالي 20,000 إلى 25,000 مورثة.</p>
+    </div>
+    <div class="two-col">
+      <div class="card adn-bl">
+        <h3 class="adn-h3">🔄 المورثة والبروتين</h3>
+        <p>المورثة → (نسخ) → ARNm → (ترجمة) → بروتين. الترتيب الثلاثي للقواعد (كودون) يُحدد الحمض الأميني المقابل.</p>
+      </div>
+      <div class="card adn-bl">
+        <h3 class="adn-h3">🧩 الأليلات</h3>
+        <p>لكل مورثة أشكال مختلفة تُسمى أليلات (Allèles). تسبّب الاختلافات في تسلسل القواعد ظهور صفات مختلفة (لون العيون، فصيلة الدم...).</p>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="sum-box adn-sum">
+      <div class="sum-hdr"><div class="sum-hdr-ico">📋</div><div><h2>ملخص للحفظ</h2><p>أهم ما يجب تذكره</p></div></div>
+      <div class="sum-grid">
+        <div class="sum-pt"><div class="sum-n adn-sn">01</div><h4>ADN = حلزون مزدوج</h4><p>شريطان متكاملان ملتويان. القواعد: A=T وG≡C دائماً (قاعدة Chargaff).</p></div>
+        <div class="sum-pt"><div class="sum-n adn-sn">02</div><h4>النيوكليوتيد = 3 مكوّنات</h4><p>سكر الديوكسيريبوز + فوسفات + قاعدة آزوتية (A,T,G,C).</p></div>
+        <div class="sum-pt"><div class="sum-n adn-sn">03</div><h4>التضاعف شبه محافظ</h4><p>Hélicase يفك، ADN Polymérase يُركّب، Ligase يُلحّم. نتيجة: جزيئان ابن متطابقان.</p></div>
+        <div class="sum-pt"><div class="sum-n adn-sn">04</div><h4>المورثة = قطعة ADN مُرمِّزة</h4><p>تُحدد صفة واحدة أو أكثر. تقع على locus محدد وتملك أشكالاً مختلفة (أليلات).</p></div>
+      </div>
+      <div class="sum-final">🧬 <strong>الخلاصة:</strong> ADN هو الكتاب الوراثي لكل كائن حي. بنيته الحلزونية المزدوجة تجعل تضاعفه دقيقاً ومحافظاً على المعلومة عبر الأجيال.</div>
+    </div>
+  </div>
+
+  <!-- ADN GAMES -->
+  <section class="games-section adn-games-bg">
+    <div class="games-wrap">
+      <div class="games-head">
+        <div class="games-kicker" style="background:#ddeeff;color:var(--blue);border-radius:50px;font-family:'Tajawal',sans-serif;font-size:.73rem;font-weight:700;letter-spacing:2px;padding:5px 16px;margin-bottom:14px;display:inline-block;">🎮 اختبار ذاتي</div>
+        <h2>اختبر معلوماتك — ADN</h2>
+        <p style="font-family:'Tajawal',sans-serif;color:var(--mid);font-size:.9rem;">أجب على الأسئلة لترسيخ مفاهيم الحمض النووي</p>
+      </div>
+      <!-- Scoreboard -->
+      <div class="scoreboard adn-sb" id="adn-sb">
+        <div class="sb-total"><div class="sb-lbl">المجموع</div><div class="sb-num adn-sb-num"><span id="adn-total">0</span><span style="font-size:1rem;color:rgba(255,255,255,.3);">/150</span></div></div>
+        <div class="sb-parts">
+          <div class="sb-part"><div class="sb-pnum adn-sb-pnum"><span id="adn-qp">0</span>/100</div><div class="sb-plbl">Quiz</div></div>
+          <div class="sb-part"><div class="sb-pnum" style="color:#e8c060;"><span id="adn-tp">0</span>/50</div><div class="sb-plbl">صح/خطأ</div></div>
+        </div>
+        <div class="sb-medal" id="adn-medal"></div>
+      </div>
+      <!-- Quiz -->
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico adn-g-ico">🧩</div>
+          <div><h3>اختيار من متعدد</h3><p>10 أسئلة — 10 نقاط لكل إجابة</p></div>
+          <div class="g-prog-txt adn-g-prog-c" id="adn-qprog">1 / 10</div>
+        </div>
+        <div class="prog-bar-wrap adn-g-prog-wrap"><div class="prog-bar adn-g-bar" id="adn-qbar" style="width:10%"></div></div>
+        <div id="adn-qc"></div>
+        <div class="game-result" id="adn-qr"></div>
+      </div>
+      <!-- TF -->
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico adn-g2ico">⚡</div>
+          <div><h3>صح أو خطأ</h3><p>5 جمل — 10 نقاط لكل إجابة</p></div>
+          <div class="g-prog-txt adn-tf-prog-c" id="adn-tprog">1 / 5</div>
+        </div>
+        <div class="prog-bar-wrap adn-tf-prog-wrap"><div class="prog-bar adn-tf-bar" id="adn-tbar" style="width:20%"></div></div>
+        <div id="adn-tc"></div>
+        <div class="game-result" id="adn-tr"></div>
+      </div>
+      <!-- Final -->
+      <div class="final-panel adn-final" id="adn-final">
+        <div class="fp-medal" id="adn-fmedal"></div>
+        <h2 id="adn-ftitle"></h2>
+        <p id="adn-fsub"></p>
+        <div class="final-score adn-final-score" id="adn-fscore"></div>
+        <button class="reset-btn adn-reset" onclick="adnReset()">🔄 إعادة المحاولة</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lesson Footer -->
+  <footer class="site-footer">
+    <div class="sf-inner">
+      <div class="sf-links">
+        <button onclick="showPage('home')">🏠 الرئيسية</button>
+        <button onclick="showPage('meiose')">🔬 الانقسام المنصف ←</button>
+        <button onclick="showPage('phenotype')">👁️ النمط الظاهري</button>
+        <button onclick="showPage('mutations')">⚡ الطفرات</button>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-bottom"><span class="sf-copy">السنة الثانية ثانوي — شعبة العلوم التجريبية 🇩🇿</span></div>
+      <div class="sf-credit">صُنع بكل فخر من طرف المبدعة <strong>الاء 💚</strong></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: MEIOSE
+══════════════════════════════════ -->
+<div id="page-meiose" class="page">
+  <header class="lesson-hero mei-hero">
+    <span class="lesson-chip mei-chip" style="color:#fff">الدرس 02 / 04</span>
+    <h1>الانقسام <span>المنصف</span></h1>
+    <p>Méiose — الانقسام الاختزالي الذي يُنتج الخلايا الجنسية</p>
+    <div class="obj-row">
+      <span class="obj-chip">📌 التعريف والأهمية</span>
+      <span class="obj-chip">🔬 المراحل التفصيلية</span>
+      <span class="obj-chip">🧬 العبور الوراثي</span>
+      <span class="obj-chip">📊 مقارنة مع الميتوز</span>
+    </div>
+  </header>
+
+  <div class="content-wrap">
+    <!-- 1. Définition -->
+    <div class="sh"><div class="sh-num mei-num">1</div><h2>تعريف الانقسام المنصف وأهميته</h2></div>
+    <div class="divider mei-div"></div>
+    <div class="card mei-bl">
+      <h3 class="mei-h3">🔬 التعريف</h3>
+      <p>الانقسام المنصف (Méiose) هو نوع خاص من الانقسام يحدث في الأعضاء التناسلية، وينتج <span class="hl mei-hl">4 خلايا جنسية أحادية الصيغة الصبغية (n)</span>. يُسمى منصفاً لأنه يُخفّض عدد الكروموسومات من 2n إلى n.</p>
+    </div>
+    <div class="callout mei-cl">
+      <span class="callout-ico">💡</span>
+      <div class="callout-txt"><strong>مثال عند الإنسان:</strong> الخلية الأم (2n = 46) → بعد الانقسام المنصف → 4 خلايا جنسية (n = 23). عند التلقيح يعود العدد إلى 46.</div>
+    </div>
+    <div class="card mei-bl">
+      <h3 class="mei-h3">🌿 الأهمية</h3>
+      <ul>
+        <li class="mei-li">الحفاظ على ثبات العدد الصبغي للنوع عبر الأجيال</li>
+        <li class="mei-li">إنتاج الأمشاج للتكاثر الجنسي</li>
+        <li class="mei-li">توليد <span class="hl mei-hl">تنوع وراثي هائل</span> بفضل العبور الوراثي</li>
+        <li class="mei-li">أساس التكاثر الجنسي ومحرك التطور البيولوجي</li>
+      </ul>
+    </div>
+
+    <!-- 2. Phases -->
+    <div class="sh"><div class="sh-num mei-num">2</div><h2>مراحل الانقسام المنصف</h2></div>
+    <div class="divider mei-div"></div>
+    <div class="callout mei-cl">
+      <span class="callout-ico">📐</span>
+      <div class="callout-txt"><strong>الانقسام المنصف = انقسامان متتاليان:</strong><br>• <strong>الانقسام I (الاختزالي)</strong>: 2n → n<br>• <strong>الانقسام II (المتساوي)</strong>: يُفرّق الكروماتيدات</div>
+    </div>
+
+    <!-- Division I label -->
+    <div class="ph-div-label" style="background:#e0faf5;border:1px solid var(--mint-lt);">
+      <span style="font-size:1rem;">⬇️</span><span style="font-weight:700;color:#0a4030;font-size:.88rem;">الانقسام الأول (Méiose I) — الاختزالي</span>
+    </div>
+
+    <div class="phases">
+      <div class="ph-item">
+        <div class="ph-line"><div class="ph-dot" style="background:#1eac90;color:#fff;">🧬</div><div class="ph-conn"></div></div>
+        <div class="ph-body">
+          <span class="ph-tag" style="background:var(--mint-pale);color:#084030;">Prophase I — الطور التمهيدي الأول</span>
+          <h4>أطول المراحل وأهمها</h4>
+          <p>تتكثف الكروموسومات وتقترن المتماثلة مشكّلةً ثنائيات (Bivalents). تحدث ظاهرة <strong>العبور الوراثي</strong> بتبادل مقاطع بين الكروماتيدات غير الشقيقة.</p>
+        </div>
+      </div>
+      <div class="ph-item">
+        <div class="ph-line"><div class="ph-dot" style="background:#2d80c0;color:#fff;">📍</div><div class="ph-conn"></div></div>
+        <div class="ph-body">
+          <span class="ph-tag" style="background:#ddeeff;color:#083060;">Métaphase I — الطور الاستوائي الأول</span>
+          <h4>تصطف الثنائيات على خط الاستواء</h4>
+          <p>تصطف ثنائيات الكروموسومات على الصفيحة الاستوائية. يتحدد بشكل عشوائي أي كروموسوم ينتقل لأي قطب، مما يُضاعف التنوع.</p>
+        </div>
+      </div>
+      <div class="ph-item">
+        <div class="ph-line"><div class="ph-dot" style="background:#e8a020;color:#fff;">↕️</div><div class="ph-conn"></div></div>
+        <div class="ph-body">
+          <span class="ph-tag" style="background:var(--amber-lt);color:#6a3800;">Anaphase I — الطور الانفصالي الأول</span>
+          <h4>انفصال الكروموسومات المتماثلة</h4>
+          <p>تنفصل <strong>الكروموسومات المتماثلة</strong> (لا الكروماتيدات!) نحو قطبي الخلية. يتحقق الاختزال: 2n → n في كل قطب.</p>
+        </div>
+      </div>
+      <div class="ph-item">
+        <div class="ph-line"><div class="ph-dot" style="background:#8050cc;color:#fff;">🏁</div><div class="ph-conn"></div></div>
+        <div class="ph-body">
+          <span class="ph-tag" style="background:#ede0ff;color:#3a1878;">Télophase I — الطور النهائي الأول</span>
+          <h4>تشكّل خليتان أحاديتا الصيغة</h4>
+          <p>تتشكل خليتان بنتيتان، كل منهما تحتوي على <span class="hl mei-hl">n كروموسوم</span> مزدوج الكروماتيد.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ph-div-label" style="background:#ddeeff;border:1px solid #a0ccee;margin:4px 0 14px;">
+      <span style="font-size:1rem;">⬇️</span><span style="font-weight:700;color:#083060;font-size:.88rem;">الانقسام الثاني (Méiose II) — شبيه بالانقسام المتساوي</span>
+    </div>
+
+    <div class="phases">
+      <div class="ph-item">
+        <div class="ph-line"><div class="ph-dot" style="background:#b83050;color:#fff;">🧬</div><div class="ph-conn"></div></div>
+        <div class="ph-body">
+          <span class="ph-tag" style="background:var(--rose-lt);color:#6a1030;">Prophase II → Métaphase II</span>
+          <h4>تحضير جديد دون تضاعف ADN</h4>
+          <p>تتكثف الكروموسومات مجدداً وتصطف على خط الاستواء. كل خلية تحتوي على n كروموسوم مزدوج.</p>
+        </div>
+      </div>
+      <div class="ph-item">
+        <div class="ph-line"><div class="ph-dot" style="background:#22884a;color:#fff;">✅</div><div class="ph-conn"></div></div>
+        <div class="ph-body">
+          <span class="ph-tag" style="background:var(--lime-pale);color:#0a4020;">Anaphase II → Télophase II</span>
+          <h4>تشكّل 4 خلايا جنسية</h4>
+          <p>تنفصل <strong>الكروماتيدات الشقيقة</strong> وينتهي الانقسام بتشكّل <span class="hl mei-hl">4 أمشاج (n)</span> متنوعة وراثياً.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout mei-cl">
+      <span class="callout-ico">🧮</span>
+      <div class="callout-txt"><strong>ملخص المعادلة:</strong> خلية أم (2n=46) → Méiose I → خليتان (n=23 مزدوج) → Méiose II → <strong>4 خلايا جنسية (n=23 بسيط)</strong></div>
+    </div>
+
+    <!-- 3. Crossing-over -->
+    <div class="sh"><div class="sh-num mei-num">3</div><h2>العبور الوراثي (Crossing-over)</h2></div>
+    <div class="divider mei-div"></div>
+    <div class="card mei-bl">
+      <h3 class="mei-h3">🔄 التعريف</h3>
+      <p>في Prophase I، تتبادل الكروماتيدات <strong>غير الشقيقة</strong> من كروموسومين متماثلين مقاطع متناظرة من DNA، مُنشئةً <span class="hl mei-hl">تركيبات جينية جديدة</span>. النتيجة: تنوع وراثي لا نهائي في الأمشاج الناتجة.</p>
+    </div>
+    <div class="callout" style="background:var(--rose-lt);border:1px solid #e8b0c0;">
+      <span class="callout-ico">⚠️</span>
+      <div class="callout-txt"><strong>تنبّه للامتحان:</strong> العبور يحدث بين الكروماتيدات <strong>غير الشقيقة</strong> (أب + أم)، وليس بين الشقيقتين اللتين تنتميان لنفس الكروموسوم.</div>
+    </div>
+
+    <!-- 4. Comparison -->
+    <div class="sh"><div class="sh-num mei-num">4</div><h2>مقارنة: المنصف والمتساوي</h2></div>
+    <div class="divider mei-div"></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr style="background:var(--navy);">
+          <th>وجه المقارنة</th><th>الانقسام المتساوي (Mitose)</th><th>الانقسام المنصف (Méiose)</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>مكان الحدوث</td><td>الخلايا الجسمية</td><td style="color:var(--teal);font-weight:700;">الأعضاء التناسلية</td></tr>
+          <tr><td>عدد الانقسامات</td><td>انقسام واحد</td><td style="color:var(--teal);font-weight:700;">انقسامان متتاليان</td></tr>
+          <tr><td>عدد الخلايا الناتجة</td><td>خليتان</td><td style="color:var(--teal);font-weight:700;">4 خلايا</td></tr>
+          <tr><td>الصيغة الصبغية</td><td>2n (مزدوجة)</td><td style="color:var(--rose);font-weight:700;">n (أحادية)</td></tr>
+          <tr><td>العبور الوراثي</td><td style="color:var(--rose);font-weight:700;">لا يحدث</td><td style="color:var(--teal);font-weight:700;">يحدث في Prophase I</td></tr>
+          <tr><td>التنوع الوراثي</td><td style="color:var(--rose);font-weight:700;">خلايا متطابقة</td><td style="color:var(--teal);font-weight:700;">خلايا متنوعة</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Summary -->
+    <div class="sum-box mei-sum">
+      <div class="sum-hdr"><div class="sum-hdr-ico">📋</div><div><h2>ملخص للحفظ</h2><p>أهم ما يجب تذكره</p></div></div>
+      <div class="sum-grid">
+        <div class="sum-pt"><div class="sum-n mei-sn">01</div><h4>انقسامان متتاليان</h4><p>Méiose I (اختزالي: 2n→n) + Méiose II (يُشبه الميتوز: n→n)</p></div>
+        <div class="sum-pt"><div class="sum-n mei-sn">02</div><h4>4 خلايا أحادية (n)</h4><p>من خلية أم واحدة (2n) ينتج 4 أمشاج (n) متنوعة وراثياً.</p></div>
+        <div class="sum-pt"><div class="sum-n mei-sn">03</div><h4>العبور — Prophase I</h4><p>تبادل مقاطع بين كروماتيدات غير شقيقة → تنوع وراثي هائل.</p></div>
+        <div class="sum-pt"><div class="sum-n mei-sn">04</div><h4>الفرق الجوهري مع الميتوز</h4><p>الميتوز: 1 انقسام → 2 خلية (2n). المنصف: 2 انقسامان → 4 خلايا (n).</p></div>
+      </div>
+      <div class="sum-final">🧬 <strong>الخلاصة:</strong> الانقسام المنصف يضمن ثبات العدد الصبغي ويُولّد تنوعاً وراثياً هائلاً هو وقود التطور البيولوجي.</div>
+    </div>
+  </div>
+
+  <!-- MEIOSE GAMES -->
+  <section class="games-section mei-games-bg">
+    <div class="games-wrap">
+      <div class="games-head">
+        <div class="games-kicker" style="background:var(--mint-pale);color:var(--teal);">🎮 اختبار ذاتي</div>
+        <h2>اختبر معلوماتك — الانقسام المنصف</h2>
+        <p style="font-family:'Tajawal',sans-serif;color:var(--mid);font-size:.9rem;">أجب على الأسئلة لترسيخ مفاهيم الميوز</p>
+      </div>
+      <div class="scoreboard mei-sb" id="mei-sb">
+        <div class="sb-total"><div class="sb-lbl">المجموع</div><div class="sb-num mei-sb-num"><span id="mei-total">0</span><span style="font-size:1rem;color:rgba(255,255,255,.3);">/150</span></div></div>
+        <div class="sb-parts">
+          <div class="sb-part"><div class="sb-pnum mei-sb-pnum"><span id="mei-qp">0</span>/100</div><div class="sb-plbl">Quiz</div></div>
+          <div class="sb-part"><div class="sb-pnum" style="color:#e8c060;"><span id="mei-tp">0</span>/50</div><div class="sb-plbl">صح/خطأ</div></div>
+        </div>
+        <div class="sb-medal" id="mei-medal"></div>
+      </div>
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico mei-g-ico">🧩</div>
+          <div><h3>اختيار من متعدد</h3><p>10 أسئلة — 10 نقاط</p></div>
+          <div class="g-prog-txt mei-g-prog-c" id="mei-qprog">1 / 10</div>
+        </div>
+        <div class="prog-bar-wrap mei-g-prog-wrap"><div class="prog-bar mei-g-bar" id="mei-qbar" style="width:10%"></div></div>
+        <div id="mei-qc"></div>
+        <div class="game-result" id="mei-qr"></div>
+      </div>
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico mei-g2ico">⚡</div>
+          <div><h3>صح أو خطأ</h3><p>5 جمل — 10 نقاط</p></div>
+          <div class="g-prog-txt mei-tf-prog-c" id="mei-tprog">1 / 5</div>
+        </div>
+        <div class="prog-bar-wrap mei-tf-prog-wrap"><div class="prog-bar mei-tf-bar" id="mei-tbar" style="width:20%"></div></div>
+        <div id="mei-tc"></div>
+        <div class="game-result" id="mei-tr"></div>
+      </div>
+      <div class="final-panel mei-final" id="mei-final">
+        <div class="fp-medal" id="mei-fmedal"></div>
+        <h2 id="mei-ftitle"></h2><p id="mei-fsub"></p>
+        <div class="final-score mei-final-score" id="mei-fscore"></div>
+        <button class="reset-btn mei-reset" onclick="meiReset()">🔄 إعادة المحاولة</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="sf-inner">
+      <div class="sf-links">
+        <button onclick="showPage('home')">🏠 الرئيسية</button>
+        <button onclick="showPage('adn')">← 🧬 ADN</button>
+        <button onclick="showPage('phenotype')">👁️ النمط الظاهري ←</button>
+        <button onclick="showPage('mutations')">⚡ الطفرات</button>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-bottom"><span class="sf-copy">السنة الثانية ثانوي — شعبة العلوم التجريبية 🇩🇿</span></div>
+      <div class="sf-credit">صُنع بكل فخر من طرف المبدعة <strong>الاء 💚</strong></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: PHENOTYPE
+══════════════════════════════════ -->
+<div id="page-phenotype" class="page">
+  <header class="lesson-hero phe-hero">
+    <span class="lesson-chip phe-chip" style="color:#fff">الدرس 03 / 04</span>
+    <h1>النمط الظاهري <span>والوراثي</span></h1>
+    <p>Phénotype & Génotype — من الجين إلى الصفة الظاهرة</p>
+    <div class="obj-row">
+      <span class="obj-chip">📌 النمط الوراثي</span>
+      <span class="obj-chip">👁️ النمط الظاهري</span>
+      <span class="obj-chip">🔗 العلاقة</span>
+      <span class="obj-chip">🌿 تأثير الوسط</span>
+      <span class="obj-chip">🧮 مربع بونيت</span>
+    </div>
+  </header>
+
+  <div class="content-wrap">
+    <!-- 1. Concepts -->
+    <div class="sh"><div class="sh-num phe-num">1</div><h2>المفاهيم الأساسية</h2></div>
+    <div class="divider phe-div"></div>
+    <div class="concept-pair">
+      <div class="con-box con-geno">
+        <span class="con-tag">Génotype</span>
+        <div class="con-ico">🧬</div>
+        <h3>النمط الوراثي</h3>
+        <p>مجموع الجينات التي يحملها الكائن على كروموسوماته. هو "البرنامج الوراثي" الخفي.</p>
+      </div>
+      <div class="con-box con-pheno">
+        <span class="con-tag">Phénotype</span>
+        <div class="con-ico">👁️</div>
+        <h3>النمط الظاهري</h3>
+        <p>مجموع الصفات الملاحظة والقابلة للقياس. نتيجة تفاعل الجينات مع البيئة.</p>
+      </div>
+    </div>
+    <div class="card phe-bl">
+      <h3 class="phe-h3">🧬 الأنماط الوراثية الممكنة</h3>
+      <ul>
+        <li class="phe-li"><span class="hl phe-hl">AA</span> — متماثل السيادة (Homozygote dominant)</li>
+        <li class="phe-li"><span class="hl phe-hl">aa</span> — متماثل المتنحي (Homozygote récessif)</li>
+        <li class="phe-li"><span class="hl phe-hl">Aa</span> — هجين (Hétérozygote)</li>
+      </ul>
+    </div>
+
+    <!-- Terms -->
+    <div class="term-grid">
+      <div class="term-card"><div class="tc-ico">👑</div><div class="tc-word">السيادة</div><div class="tc-fr">Dominance</div><div class="tc-def">الأليل الذي يظهر حتى بنسخة واحدة</div></div>
+      <div class="term-card"><div class="tc-ico">🙈</div><div class="tc-word">التنحي</div><div class="tc-fr">Récessivité</div><div class="tc-def">لا يظهر إلا بنسختين (aa)</div></div>
+      <div class="term-card"><div class="tc-ico">🔀</div><div class="tc-word">الهجين</div><div class="tc-fr">Hétérozygote</div><div class="tc-def">يحمل أليلين مختلفين (Aa)</div></div>
+      <div class="term-card"><div class="tc-ico">🔁</div><div class="tc-word">متماثل</div><div class="tc-fr">Homozygote</div><div class="tc-def">أليلان متطابقان (AA أو aa)</div></div>
+      <div class="term-card"><div class="tc-ico">🧩</div><div class="tc-word">الأليل</div><div class="tc-fr">Allèle</div><div class="tc-def">شكل مختلف من نفس المورثة</div></div>
+      <div class="term-card"><div class="tc-ico">📍</div><div class="tc-word">الموضع الجيني</div><div class="tc-fr">Locus</div><div class="tc-def">موقع المورثة على الكروموسوم</div></div>
+    </div>
+
+    <!-- 2. Relation -->
+    <div class="sh"><div class="sh-num phe-num">2</div><h2>العلاقة بين النمطين</h2></div>
+    <div class="divider phe-div"></div>
+    <div class="rel-flow">
+      <div style="font-size:.78rem;font-weight:700;color:#7a9090;margin-bottom:6px;width:100%;text-align:center;font-family:'Tajawal',sans-serif;">من المعلومة الوراثية إلى الصفة الظاهرة</div>
+      <div class="rel-box rb1"><div class="rb-ico">🧬</div><div class="rb-lbl">ADN</div><div class="rb-sub">المعلومة الوراثية</div></div>
+      <div class="rel-arr">→</div>
+      <div class="rel-box rb2"><div class="rb-ico">🗺️</div><div class="rb-lbl">النمط الوراثي</div><div class="rb-sub">Génotype</div></div>
+      <div class="rel-plus">+</div>
+      <div class="rel-box rb3"><div class="rb-ico">🌿</div><div class="rb-lbl">البيئة</div><div class="rb-sub">Environnement</div></div>
+      <div class="rel-arr">→</div>
+      <div class="rel-box rb4"><div class="rb-ico">👁️</div><div class="rb-lbl">النمط الظاهري</div><div class="rb-sub">Phénotype</div></div>
+    </div>
+    <div class="card phe-bl">
+      <h3 class="phe-h3">⚡ قاعدة السيادة والتنحي</h3>
+      <ul>
+        <li class="phe-li">الأليل السائد <span class="hl phe-hl">A</span> يظهر في النمط الظاهري سواء كان <span class="hl phe-hl">AA</span> أو <span class="hl phe-hl">Aa</span></li>
+        <li class="phe-li">الأليل المتنحي <span class="hl" style="background:var(--rose-lt);color:#5a0818;">a</span> لا يظهر إلا في <span class="hl" style="background:var(--rose-lt);color:#5a0818;">aa</span></li>
+      </ul>
+    </div>
+    <div class="callout phe-cl">
+      <span class="callout-ico">💡</span>
+      <div class="callout-txt"><strong>مثال: بذور البازلاء</strong><br>A = أصفر (سائد) — a = أخضر (متنحي)<br>• AA → [أصفر] &nbsp;• Aa → [أصفر] &nbsp;• aa → [أخضر]</div>
+    </div>
+
+    <!-- 3. Environment -->
+    <div class="sh"><div class="sh-num phe-num">3</div><h2>تأثير الوسط البيئي</h2></div>
+    <div class="divider phe-div"></div>
+    <div class="card phe-bl">
+      <h3 class="phe-h3">🌿 الصيغة الأساسية</h3>
+      <div style="background:#ede0ff;border-radius:9px;padding:12px 16px;text-align:center;font-weight:700;color:#3a1878;font-size:1rem;margin:10px 0;">النمط الظاهري = النمط الوراثي × الوسط البيئي</div>
+    </div>
+    <div class="two-col">
+      <div class="callout phe-cl"><span class="callout-ico">🔒</span><div class="callout-txt"><strong>صفات ثابتة:</strong> فصيلة الدم، لون العيون — تتحدد حصراً بالنمط الوراثي.</div></div>
+      <div class="callout phe-cl"><span class="callout-ico">🌡️</span><div class="callout-txt"><strong>صفات متغيرة:</strong> الطول (تغذية)، لون الجلد (شمس)، العضلات (رياضة).</div></div>
+    </div>
+    <div class="callout" style="background:var(--rose-lt);border:1px solid #e8b0c0;">
+      <span class="callout-ico">🐱</span>
+      <div class="callout-txt"><strong>مثال: القطة السيامية</strong> — نفس النمط الوراثي لكن الأطراف الباردة تكون داكنة والجسم الدافئ فاتحاً. الحرارة تُغيّر النمط الظاهري!</div>
+    </div>
+
+    <!-- 4. Punnett -->
+    <div class="sh"><div class="sh-num phe-num">4</div><h2>مربع بونيت — مثال تطبيقي</h2></div>
+    <div class="divider phe-div"></div>
+    <div class="card phe-bl">
+      <h3 class="phe-h3">📝 المسألة</h3>
+      <p>لون الزهرة الأحمر <span class="hl phe-hl">A</span> سائد على الأبيض <span class="hl" style="background:var(--rose-lt);color:#5a0818;">a</span>. تزاوج: <span class="hl phe-hl">Aa × Aa</span>. أحسب نسب النسل.</p>
+    </div>
+    <div style="text-align:center;margin:20px 0 10px;overflow-x:auto;">
+      <div class="punnett-tbl" style="display:inline-grid;">
+        <div class="p-corner"></div>
+        <div class="p-hdr">A</div><div class="p-hdr">a</div>
+        <div class="p-hdr">A</div>
+        <div class="p-cell pdom"><span>AA</span><span>[أحمر]</span></div>
+        <div class="p-cell phet"><span>Aa</span><span>[أحمر]</span></div>
+        <div class="p-hdr">a</div>
+        <div class="p-cell phet"><span>Aa</span><span>[أحمر]</span></div>
+        <div class="p-cell prec"><span>aa</span><span>[أبيض]</span></div>
+      </div>
+    </div>
+    <div class="callout phe-cl">
+      <span class="callout-ico">📊</span>
+      <div class="callout-txt">
+        <strong>النتائج:</strong><br>
+        • الأنماط الوراثية: AA : Aa : aa = <strong>1 : 2 : 1</strong><br>
+        • الأنماط الظاهرية: [أحمر] : [أبيض] = <strong>3 : 1</strong><br>
+        • 75% أحمر (AA + Aa) &nbsp;|&nbsp; 25% أبيض (aa)
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="sum-box phe-sum">
+      <div class="sum-hdr"><div class="sum-hdr-ico">📋</div><div><h2>ملخص للحفظ</h2><p>أهم ما يجب تذكره</p></div></div>
+      <div class="sum-grid">
+        <div class="sum-pt"><div class="sum-n phe-sn">01</div><h4>النمط الوراثي = الجينات</h4><p>AA, Aa, aa — ثابت طوال حياة الكائن.</p></div>
+        <div class="sum-pt"><div class="sum-n phe-sn">02</div><h4>النمط الظاهري = الصفات</h4><p>يتأثر بالنمط الوراثي والوسط البيئي معاً.</p></div>
+        <div class="sum-pt"><div class="sum-n phe-sn">03</div><h4>السيادة والتنحي</h4><p>السائد يظهر في AA وAa. المتنحي في aa فقط. Aa×Aa = 3:1</p></div>
+        <div class="sum-pt"><div class="sum-n phe-sn">04</div><h4>الوسط يُعدّل التعبير</h4><p>نفس الجينات قد تُعطي صفات مختلفة حسب البيئة.</p></div>
+      </div>
+      <div class="sum-final">🧬 <strong>الخلاصة:</strong> النمط الظاهري ليس مجرد انعكاس للجينات — بل هو نتيجة تفاعل معقد بين الجينات والبيئة.</div>
+    </div>
+  </div>
+
+  <!-- PHENOTYPE GAMES -->
+  <section class="games-section phe-games-bg">
+    <div class="games-wrap">
+      <div class="games-head">
+        <div class="games-kicker" style="background:#ede0ff;color:#5a30a0;">🎮 اختبار ذاتي</div>
+        <h2>اختبر معلوماتك — النمط الظاهري والوراثي</h2>
+        <p style="font-family:'Tajawal',sans-serif;color:var(--mid);font-size:.9rem;">أجب على الأسئلة لترسيخ مفاهيم الوراثة</p>
+      </div>
+      <div class="scoreboard phe-sb" id="phe-sb">
+        <div class="sb-total"><div class="sb-lbl">المجموع</div><div class="sb-num phe-sb-num"><span id="phe-total">0</span><span style="font-size:1rem;color:rgba(255,255,255,.3);">/150</span></div></div>
+        <div class="sb-parts">
+          <div class="sb-part"><div class="sb-pnum phe-sb-pnum"><span id="phe-qp">0</span>/100</div><div class="sb-plbl">Quiz</div></div>
+          <div class="sb-part"><div class="sb-pnum" style="color:#e8c060;"><span id="phe-tp">0</span>/50</div><div class="sb-plbl">صح/خطأ</div></div>
+        </div>
+        <div class="sb-medal" id="phe-medal"></div>
+      </div>
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico phe-g-ico">🧩</div>
+          <div><h3>اختيار من متعدد</h3><p>10 أسئلة — 10 نقاط</p></div>
+          <div class="g-prog-txt phe-g-prog-c" id="phe-qprog">1 / 10</div>
+        </div>
+        <div class="prog-bar-wrap phe-g-prog-wrap"><div class="prog-bar phe-g-bar" id="phe-qbar" style="width:10%"></div></div>
+        <div id="phe-qc"></div>
+        <div class="game-result" id="phe-qr"></div>
+      </div>
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico phe-g2ico">⚡</div>
+          <div><h3>صح أو خطأ</h3><p>5 جمل — 10 نقاط</p></div>
+          <div class="g-prog-txt phe-tf-prog-c" id="phe-tprog">1 / 5</div>
+        </div>
+        <div class="prog-bar-wrap phe-tf-prog-wrap"><div class="prog-bar phe-tf-bar" id="phe-tbar" style="width:20%"></div></div>
+        <div id="phe-tc"></div>
+        <div class="game-result" id="phe-tr"></div>
+      </div>
+      <div class="final-panel phe-final" id="phe-final">
+        <div class="fp-medal" id="phe-fmedal"></div>
+        <h2 id="phe-ftitle"></h2><p id="phe-fsub"></p>
+        <div class="final-score phe-final-score" id="phe-fscore"></div>
+        <button class="reset-btn phe-reset" onclick="pheReset()">🔄 إعادة المحاولة</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="sf-inner">
+      <div class="sf-links">
+        <button onclick="showPage('home')">🏠 الرئيسية</button>
+        <button onclick="showPage('meiose')">← 🔬 الانقسام المنصف</button>
+        <button onclick="showPage('mutations')">⚡ الطفرات ←</button>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-bottom"><span class="sf-copy">السنة الثانية ثانوي — شعبة العلوم التجريبية 🇩🇿</span></div>
+      <div class="sf-credit">صُنع بكل فخر من طرف المبدعة <strong>الاء 💚</strong></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: MUTATIONS
+══════════════════════════════════ -->
+<div id="page-mutations" class="page">
+  <header class="lesson-hero mut-hero">
+    <span class="lesson-chip mut-chip" style="color:#fff">الدرس 04 / 04</span>
+    <h1><span>الطفرات</span></h1>
+    <p>Mutations — تغيّرات جذرية في المعلومة الوراثية وعلاقتها بالتنوع</p>
+    <div class="obj-row">
+      <span class="obj-chip">📌 التعريف</span>
+      <span class="obj-chip">🔬 الأنواع</span>
+      <span class="obj-chip">⚡ الأسباب</span>
+      <span class="obj-chip">🎯 الآثار</span>
+      <span class="obj-chip">🌿 التنوع البيولوجي</span>
+    </div>
+  </header>
+
+  <div class="content-wrap">
+    <!-- 1. Définition -->
+    <div class="sh"><div class="sh-num mut-num">1</div><h2>تعريف الطفرة</h2></div>
+    <div class="divider mut-div"></div>
+    <div class="card mut-bl">
+      <h3 class="mut-h3">🧬 ما هي الطفرة؟</h3>
+      <p>الطفرة (Mutation) هي <span class="hl mut-hl">تغيّر مفاجئ ودائم في تسلسل قواعد ADN</span>. تطال قاعدة آزوتية واحدة أو مقطعاً من الكروموسوم أو عدد الكروموسومات كليّاً. الطفرة <strong>تُورَّث</strong> إذا أصابت الخلايا الجنسية.</p>
+    </div>
+    <div class="two-col">
+      <div class="card mut-bl">
+        <h3 class="mut-h3">🔒 طفرة جرثومية</h3>
+        <p>تصيب الخلايا الجنسية → <strong>تُورَّث للأبناء</strong> → خطيرة على مستوى التطور.</p>
+      </div>
+      <div class="card" style="border-right:5px solid var(--amber);">
+        <h3 style="color:#7a4800;">🔓 طفرة جسمية</h3>
+        <p>تصيب خلايا الجسم → <strong>لا تُورَّث</strong> لكن قد تُسبب السرطان في الفرد.</p>
+      </div>
+    </div>
+    <div class="callout mut-cl">
+      <span class="callout-ico">💡</span>
+      <div class="callout-txt">معدل الطفرات الطبيعي منخفض جداً: خطأ واحد لكل <strong>10⁹ قاعدة</strong> عند التضاعف. الخلية تملك آليات إصلاح ذاتي (Réparation de l'ADN) تُصحح معظم الأخطاء.</div>
+    </div>
+
+    <!-- 2. Types -->
+    <div class="sh"><div class="sh-num mut-num">2</div><h2>أنواع الطفرات</h2></div>
+    <div class="divider mut-div"></div>
+    <div class="mut-cards">
+      <div class="mtc mtc1">
+        <div class="mtc-tag">Mutation génique</div>
+        <div class="mtc-ico">🔤</div>
+        <h3>الطفرة الجينية (النقطية)</h3>
+        <p>تغيير في قاعدة آزوتية واحدة أو أكثر داخل الجين: استبدال، حذف، أو إضافة.</p>
+      </div>
+      <div class="mtc mtc2">
+        <div class="mtc-tag">Mutation chromosomique</div>
+        <div class="mtc-ico">🔬</div>
+        <h3>الطفرة الصبغية</h3>
+        <p>تغيير في بنية الكروموسوم: حذف مقطع، تضاعفه، قلبه، أو انتقاله.</p>
+      </div>
+      <div class="mtc mtc3">
+        <div class="mtc-tag">Mutation génomique</div>
+        <div class="mtc-ico">🧮</div>
+        <h3>الطفرة الجينومية</h3>
+        <p>تغيير في عدد الكروموسومات: كـ Polyploïdie أو Trisomie 21 (متلازمة داون).</p>
+      </div>
+      <div class="mtc mtc4">
+        <div class="mtc-tag">Spontanée / Induite</div>
+        <div class="mtc-ico">⚗️</div>
+        <h3>تلقائية أو مستحثة</h3>
+        <p>التلقائية: أثناء تضاعف ADN. المستحثة: بعوامل خارجية (UV، إشعاع، مواد كيميائية).</p>
+      </div>
+    </div>
+
+    <!-- DNA vis -->
+    <div class="dna-vis">
+      <div class="dv-title">🧬 أنواع الطفرات الجينية على مستوى التسلسل</div>
+      <div class="dv-cols">
+        <div class="dv-col">
+          <span class="dv-tag dv-norm">التسلسل الطبيعي</span>
+          <div class="dna-seq">
+            <div class="dna-row"><div class="dbase bA">A</div><div class="dbond"></div><div class="dbase bT">T</div></div>
+            <div class="dna-row"><div class="dbase bG">G</div><div class="dbond"></div><div class="dbase bC" style="background:#d88800;">C</div></div>
+            <div class="dna-row"><div class="dbase bT">T</div><div class="dbond"></div><div class="dbase bA">A</div></div>
+            <div class="dna-row"><div class="dbase bC" style="background:#d88800;">C</div><div class="dbond"></div><div class="dbase bG">G</div></div>
+          </div>
+        </div>
+        <div class="dv-col">
+          <span class="dv-tag dv-mut">استبدال (Substitution)</span>
+          <div class="dna-seq">
+            <div class="dna-row"><div class="dbase bA">A</div><div class="dbond"></div><div class="dbase bT">T</div></div>
+            <div class="dna-row"><div class="dbase bC mut-b" style="background:#d88800;">C</div><div class="dbond"></div><div class="dbase bG mut-b">G</div></div>
+            <div class="dna-row"><div class="dbase bT">T</div><div class="dbond"></div><div class="dbase bA">A</div></div>
+            <div class="dna-row"><div class="dbase bC" style="background:#d88800;">C</div><div class="dbond"></div><div class="dbase bG">G</div></div>
+          </div>
+          <div class="dv-sub-lbl">G → C تحوّلت</div>
+        </div>
+        <div class="dv-col">
+          <span class="dv-tag dv-mut">حذف (Délétion)</span>
+          <div class="dna-seq">
+            <div class="dna-row"><div class="dbase bA">A</div><div class="dbond"></div><div class="dbase bT">T</div></div>
+            <div class="dna-row"><div class="dbase bG del-b">G</div><div class="dbond" style="opacity:.2;"></div><div class="dbase bC del-b" style="background:#d88800;">C</div></div>
+            <div class="dna-row"><div class="dbase bT">T</div><div class="dbond"></div><div class="dbase bA">A</div></div>
+            <div class="dna-row"><div class="dbase bC" style="background:#d88800;">C</div><div class="dbond"></div><div class="dbase bG">G</div></div>
+          </div>
+          <div class="dv-sub-lbl">الزوج الثاني مَحذوف</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Causes -->
+    <div class="sh"><div class="sh-num mut-num">3</div><h2>أسباب الطفرات</h2></div>
+    <div class="divider mut-div"></div>
+    <div class="causes">
+      <div class="cau-card"><div class="cau-ico">☀️</div><div class="cau-name">الأشعة فوق البنفسجية</div><div class="cau-type">فيزيائي</div></div>
+      <div class="cau-card"><div class="cau-ico">☢️</div><div class="cau-name">الإشعاعات المؤيّنة</div><div class="cau-type">فيزيائي</div></div>
+      <div class="cau-card"><div class="cau-ico">🚬</div><div class="cau-name">دخان التبغ</div><div class="cau-type">كيميائي</div></div>
+      <div class="cau-card"><div class="cau-ico">🧪</div><div class="cau-name">المواد الكيميائية</div><div class="cau-type">كيميائي</div></div>
+      <div class="cau-card"><div class="cau-ico">🦠</div><div class="cau-name">الفيروسات</div><div class="cau-type">بيولوجي</div></div>
+      <div class="cau-card"><div class="cau-ico">⚗️</div><div class="cau-name">خطأ في التضاعف</div><div class="cau-type">تلقائي</div></div>
+    </div>
+
+    <!-- 4. Effects -->
+    <div class="sh"><div class="sh-num mut-num">4</div><h2>آثار الطفرات</h2></div>
+    <div class="divider mut-div"></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr style="background:#0e2e10;">
+          <th>نوع الأثر</th><th>التصنيف</th><th>الأمثلة</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>طفرة ضارة</td><td><span class="badge b-neg">سلبي</span></td><td>السرطانات، ضمور العضلات، التليف الكيسي</td></tr>
+          <tr><td>طفرة مفيدة</td><td><span class="badge b-pos">إيجابي</span></td><td>مقاومة الملاريا (هيموغلوبين S)</td></tr>
+          <tr><td>طفرة محايدة</td><td><span class="badge b-neu">محايد</span></td><td>تغييرات في مناطق غير مُرمِّزة</td></tr>
+          <tr><td>متلازمة داون (Trisomie 21)</td><td><span class="badge b-neg">جينومية</span></td><td>3 نسخ من الكروموسوم 21</td></tr>
+          <tr><td>فقر الدم المنجلي</td><td><span class="badge b-neg">نقطية</span></td><td>استبدال A→T في جين الهيموغلوبين</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout mut-cl">
+      <span class="callout-ico">🔬</span>
+      <div class="callout-txt"><strong>مثال درامي — فقر الدم المنجلي:</strong> تغيير قاعدة واحدة فقط (A→T) يُحوّل الغلوتاميك إلى فالين ويُشوّه خلايا الدم الحمراء بالكامل!</div>
+    </div>
+
+    <!-- 5. Biodiversity -->
+    <div class="sh"><div class="sh-num mut-num">5</div><h2>الطفرات والتنوع البيولوجي</h2></div>
+    <div class="divider mut-div"></div>
+    <div class="bio-cards">
+      <div class="bio-card bc1"><div class="bci">🧬</div><h4>مصدر أليلات جديدة</h4><p>كل أليل جديد في مجتمع بيولوجي نشأ أصلاً من طفرة في أحد الأسلاف.</p></div>
+      <div class="bio-card bc2"><div class="bci">🎯</div><h4>الانتقاء الطبيعي</h4><p>الطفرات المفيدة تنتشر في المجتمع بفضل الانتقاء الطبيعي.</p></div>
+      <div class="bio-card bc3"><div class="bci">🌱</div><h4>تكوّن أنواع جديدة</h4><p>تراكم الطفرات عبر الأجيال يُفضي إلى تكوّن أنواع جديدة (التطور).</p></div>
+    </div>
+    <div class="callout" style="background:var(--amber-lt);border:1px solid #e0d080;">
+      <span class="callout-ico">🌍</span>
+      <div class="callout-txt"><strong>المثلث الذهبي للتنوع:</strong> الطفرة + الانقسام المنصف + العبور الوراثي = محركات التنوع البيولوجي على كوكب الأرض.</div>
+    </div>
+
+    <!-- Summary -->
+    <div class="sum-box mut-sum">
+      <div class="sum-hdr"><div class="sum-hdr-ico">📋</div><div><h2>ملخص للحفظ</h2><p>أهم ما يجب تذكره</p></div></div>
+      <div class="sum-grid">
+        <div class="sum-pt"><div class="sum-n mut-sn">01</div><h4>الطفرة = تغيير دائم في ADN</h4><p>جينية (نقطية) / صبغية / جينومية.</p></div>
+        <div class="sum-pt"><div class="sum-n mut-sn">02</div><h4>أسبابها</h4><p>إشعاع، UV، مواد كيميائية، فيروسات، أو أخطاء تضاعف.</p></div>
+        <div class="sum-pt"><div class="sum-n mut-sn">03</div><h4>آثارها: ضارة/محايدة/مفيدة</h4><p>معظمها ضار، لكن النادر يُعطي ميزة تنافسية.</p></div>
+        <div class="sum-pt"><div class="sum-n mut-sn">04</div><h4>جرثومية ≠ جسمية</h4><p>الجرثومية تُورَّث. الجسمية قد تُسبب السرطان.</p></div>
+        <div class="sum-pt"><div class="sum-n mut-sn">05</div><h4>وقود التطور</h4><p>الطفرات هي المصدر الأول للتنوع الجيني.</p></div>
+      </div>
+      <div class="sum-final">🧬 <strong>الخلاصة:</strong> رغم خطورتها، الطفرات هي ثمن الحياة والتنوع. بدونها لما تنوّعت الأنواع ولما حدث التطور.</div>
+    </div>
+  </div>
+
+  <!-- MUTATIONS GAMES -->
+  <section class="games-section mut-games-bg">
+    <div class="games-wrap">
+      <div class="games-head">
+        <div class="games-kicker" style="background:#d8f4d0;color:#226830;">🎮 اختبار ذاتي</div>
+        <h2>اختبر معلوماتك — الطفرات</h2>
+        <p style="font-family:'Tajawal',sans-serif;color:var(--mid);font-size:.9rem;">أجب على الأسئلة لترسيخ مفاهيم الطفرات والتنوع</p>
+      </div>
+      <div class="scoreboard mut-sb" id="mut-sb">
+        <div class="sb-total"><div class="sb-lbl">المجموع</div><div class="sb-num mut-sb-num"><span id="mut-total">0</span><span style="font-size:1rem;color:rgba(255,255,255,.3);">/150</span></div></div>
+        <div class="sb-parts">
+          <div class="sb-part"><div class="sb-pnum mut-sb-pnum"><span id="mut-qp">0</span>/100</div><div class="sb-plbl">Quiz</div></div>
+          <div class="sb-part"><div class="sb-pnum" style="color:#e8c060;"><span id="mut-tp">0</span>/50</div><div class="sb-plbl">صح/خطأ</div></div>
+        </div>
+        <div class="sb-medal" id="mut-medal"></div>
+      </div>
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico mut-g-ico">🧩</div>
+          <div><h3>اختيار من متعدد</h3><p>10 أسئلة — 10 نقاط</p></div>
+          <div class="g-prog-txt mut-g-prog-c" id="mut-qprog">1 / 10</div>
+        </div>
+        <div class="prog-bar-wrap mut-g-prog-wrap"><div class="prog-bar mut-g-bar" id="mut-qbar" style="width:10%"></div></div>
+        <div id="mut-qc"></div>
+        <div class="game-result" id="mut-qr"></div>
+      </div>
+      <div class="game-box">
+        <div class="game-box-hdr">
+          <div class="game-box-ico mut-g2ico">⚡</div>
+          <div><h3>صح أو خطأ</h3><p>5 جمل — 10 نقاط</p></div>
+          <div class="g-prog-txt mut-tf-prog-c" id="mut-tprog">1 / 5</div>
+        </div>
+        <div class="prog-bar-wrap mut-tf-prog-wrap"><div class="prog-bar mut-tf-bar" id="mut-tbar" style="width:20%"></div></div>
+        <div id="mut-tc"></div>
+        <div class="game-result" id="mut-tr"></div>
+      </div>
+      <div class="final-panel mut-final" id="mut-final">
+        <div class="fp-medal" id="mut-fmedal"></div>
+        <h2 id="mut-ftitle"></h2><p id="mut-fsub"></p>
+        <div class="final-score mut-final-score" id="mut-fscore"></div>
+        <button class="reset-btn mut-reset" onclick="mutReset()">🔄 إعادة المحاولة</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="sf-inner">
+      <div class="sf-links">
+        <button onclick="showPage('home')">🏠 الرئيسية</button>
+        <button onclick="showPage('adn')">🧬 ADN</button>
+        <button onclick="showPage('meiose')">🔬 الانقسام المنصف</button>
+        <button onclick="showPage('phenotype')">← 👁️ النمط الظاهري</button>
+      </div>
+      <div class="sf-divider"></div>
+      <div class="sf-bottom"><span class="sf-copy">السنة الثانية ثانوي — شعبة العلوم التجريبية 🇩🇿</span></div>
+      <div class="sf-credit">صُنع بكل فخر من طرف المبدعة <strong>الاء 💚</strong></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ════════════════════════════════════════
+   SPA NAVIGATION
+════════════════════════════════════════ */
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  // Update nav active
+  ['home','adn','meiose','phenotype','mutations'].forEach(n=>{
+    const btn=document.getElementById('nav-'+n);
+    const mbtn=document.getElementById('mnav-'+n);
+    if(btn) btn.classList.toggle('nav-active',n===id);
+    if(mbtn) mbtn.classList.toggle('nav-active',n===id);
+  });
+}
+function toggleMenu(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+// Close menu on outside click
+document.addEventListener('click',e=>{
+  const m=document.getElementById('mobile-menu');
+  if(m.classList.contains('open') && !m.contains(e.target) && !e.target.closest('.nav-hamburger')) m.classList.remove('open');
+});
+
+/* ════════════════════════════════════════
+   GENERIC GAME ENGINE
+════════════════════════════════════════ */
+function makeGame(cfg){
+  let qi=0,qp=0,qd=false,ti=0,tp=0,td=false;
+  const id=cfg.id;
+  function upd(){
+    document.getElementById(id+'-qp').textContent=qp;
+    document.getElementById(id+'-tp').textContent=tp;
+    document.getElementById(id+'-total').textContent=qp+tp;
+  }
+  function renderQ(){
+    if(qi>=cfg.quiz.length){endQ();return;}
+    const d=cfg.quiz[qi];
+    document.getElementById(id+'-qbar').style.width=((qi+1)/cfg.quiz.length*100)+'%';
+    document.getElementById(id+'-qprog').textContent=(qi+1)+' / '+cfg.quiz.length;
+    document.getElementById(id+'-qc').innerHTML=`<div class="g-anim">
+      <div class="q-text">❓ ${d.q}</div>
+      <div class="opts-grid">${d.opts.map((o,i)=>`<button class="opt-btn" onclick="${id}ansQ(${i})">${o}</button>`).join('')}</div>
+      <div id="${id}-qexp"></div></div>`;
+  }
+  function ansQ(c){
+    const d=cfg.quiz[qi];
+    document.querySelectorAll('#page-'+cfg.page+' .opt-btn').forEach(b=>b.disabled=true);
+    const ok=c===d.ans;
+    document.querySelectorAll('#page-'+cfg.page+' .opt-btn')[c].classList.add(ok?'correct':'wrong');
+    if(!ok) document.querySelectorAll('#page-'+cfg.page+' .opt-btn')[d.ans].classList.add('reveal');
+    if(ok){qp+=10;upd();}
+    document.getElementById(id+'-qexp').innerHTML=`<div class="exp-box ${ok?'exp-ok':'exp-bad'}">${d.exp}</div>
+      <button class="${id}-nxt nxt-btn" onclick="${id}nxtQ()" style="background:${cfg.qcol};color:#fff;">${qi<cfg.quiz.length-1?'التالي ←':'إنهاء الاختبار 🏁'}</button>`;
+  }
+  function nxtQ(){qi++;renderQ();}
+  function endQ(){
+    qd=true;
+    document.getElementById(id+'-qbar').style.width='100%';
+    document.getElementById(id+'-qprog').textContent='مكتمل ✅';
+    document.getElementById(id+'-qc').innerHTML='';
+    const r=document.getElementById(id+'-qr');r.style.cssText='display:block;background:'+(qp>=80?'#d0f4e8':qp>=60?'#fff0cc':'#fce0e8');
+    r.innerHTML=`<div style="font-size:1.9rem;font-weight:900;color:${qp>=80?cfg.qcol:qp>=60?'#8a4800':'#8a1020'};">${qp}/100</div>
+      <div style="font-family:Tajawal,sans-serif;color:var(--mid);margin-top:6px;">${qp>=80?'🌟 ممتاز!':qp>=60?'👍 جيد جداً!':'📚 راجع الدرس.'}</div>`;
+    chkDone();
+  }
+  function renderTF(){
+    if(ti>=cfg.tf.length){endTF();return;}
+    const d=cfg.tf[ti];
+    document.getElementById(id+'-tbar').style.width=((ti+1)/cfg.tf.length*100)+'%';
+    document.getElementById(id+'-tprog').textContent=(ti+1)+' / '+cfg.tf.length;
+    document.getElementById(id+'-tc').innerHTML=`<div class="g-anim">
+      <div class="tf-stmt" style="background:${cfg.tfbg};border:1px solid ${cfg.tfborder};">🔍 ${d.q}</div>
+      <div class="tf-btns">
+        <button class="tf-btn tf-t" onclick="${id}ansTF(true)">✅ صح</button>
+        <button class="tf-btn tf-f" onclick="${id}ansTF(false)">❌ خطأ</button>
+      </div><div id="${id}-texp"></div></div>`;
+  }
+  function ansTF(c){
+    const d=cfg.tf[ti];
+    document.querySelectorAll('#page-'+cfg.page+' .tf-btn').forEach(b=>b.disabled=true);
+    const ok=c===d.ans;
+    document.querySelector('#page-'+cfg.page+' '+(c?'.tf-t':'.tf-f')).classList.add(ok?'sel-ok':'sel-bad');
+    if(!ok) document.querySelector('#page-'+cfg.page+' '+(d.ans?'.tf-t':'.tf-f')).classList.add('rev-ok');
+    if(ok){tp+=10;upd();}
+    document.getElementById(id+'-texp').innerHTML=`<div class="exp-box ${ok?'exp-ok':'exp-bad'}" style="text-align:center;">${d.exp}</div>
+      <div style="text-align:center;"><button class="nxt-btn" onclick="${id}nxtTF()" style="background:${cfg.tcol};color:#fff;">${ti<cfg.tf.length-1?'التالي ←':'إنهاء اللعبة 🏁'}</button></div>`;
+  }
+  function nxtTF(){ti++;renderTF();}
+  function endTF(){
+    td=true;
+    document.getElementById(id+'-tbar').style.width='100%';
+    document.getElementById(id+'-tprog').textContent='مكتملة ✅';
+    document.getElementById(id+'-tc').innerHTML='';
+    const r=document.getElementById(id+'-tr');r.style.cssText='display:block;background:'+(tp>=40?'#d0f4e8':tp>=20?'#fff0cc':'#fce0e8');
+    r.innerHTML=`<div style="font-size:1.9rem;font-weight:900;color:${tp>=40?cfg.tcol:tp>=20?'#8a4800':'#8a1020'};">${tp}/50</div>
+      <div style="font-family:Tajawal,sans-serif;color:var(--mid);margin-top:6px;">${tp>=40?'🌟 رائع!':tp>=20?'👍 جيد!':'📚 راجع الدرس.'}</div>`;
+    chkDone();
+  }
+  function chkDone(){
+    if(!qd||!td)return;
+    const t=qp+tp;
+    let m,ttl,s;
+    if(t>=130){m='🥇';ttl='ممتاز! أنت متفوق';s='أتقنتَ المفاهيم بامتياز!';}
+    else if(t>=100){m='🥈';ttl='جيد جداً!';s='مستواك جيد، مراجعة بسيطة ستوصلك للامتياز.';}
+    else if(t>=70){m='🥉';ttl='جيد، واصل!';s='أساسياتك جيدة، ركّز على النقاط المُشكِلة.';}
+    else{m='📚';ttl='تحتاج مراجعة';s='راجع الدرس وحاول مجدداً!';}
+    document.getElementById(id+'-medal').textContent=m;
+    document.getElementById(id+'-medal').style.display='block';
+    const fp=document.getElementById(id+'-final');
+    fp.style.display='block';
+    fp.scrollIntoView({behavior:'smooth',block:'center'});
+    document.getElementById(id+'-fmedal').textContent=m;
+    document.getElementById(id+'-ftitle').textContent=ttl;
+    document.getElementById(id+'-fsub').textContent=s;
+    document.getElementById(id+'-fscore').textContent=t+' / 150';
+  }
+  function reset(){
+    qi=0;qp=0;qd=false;ti=0;tp=0;td=false;upd();
+    [id+'-qr',id+'-tr',id+'-final'].forEach(x=>{document.getElementById(x).style.display='none';});
+    document.getElementById(id+'-medal').style.display='none';
+    document.getElementById(id+'-qbar').style.width='10%';
+    document.getElementById(id+'-tbar').style.width='20%';
+    document.getElementById(id+'-qprog').textContent='1 / '+cfg.quiz.length;
+    document.getElementById(id+'-tprog').textContent='1 / '+cfg.tf.length;
+    renderQ();renderTF();
+    document.getElementById(id+'-sb').scrollIntoView({behavior:'smooth'});
+  }
+  // Expose handlers globally
+  window[id+'ansQ']=ansQ;
+  window[id+'nxtQ']=nxtQ;
+  window[id+'ansTF']=ansTF;
+  window[id+'nxtTF']=nxtTF;
+  window[id+'Reset']=reset;
+  // Init
+  renderQ();renderTF();
+}
+
+/* ════════════════════════════════════════
+   QUIZ DATA — ADN
+════════════════════════════════════════ */
+makeGame({
+  id:'adn',page:'adn',
+  qcol:'var(--blue-lt)',tcol:'#d48810',
+  tfbg:'var(--sky)',tfborder:'var(--border)',
+  quiz:[
+    {q:"ما الاسم الكامل لاختصار ADN؟",opts:["Acide DésoxyriboNucléique","Acide RiboNucléique","Acide DésoxyriboNitrique","Agence De Nutrition"],ans:0,
+     exp:"✅ ADN = Acide DésoxyriboNucléique. أما ARN فهو Acide RiboNucléique، وهو مختلف عن ADN في الشكل والوظيفة."},
+    {q:"من أين يتألف النيوكليوتيد؟",opts:["قاعدة آزوتية فقط","سكر + فوسفات + قاعدة آزوتية","بروتين + سكر","ريبوز + أمين + كبريت"],ans:1,
+     exp:"✅ النيوكليوتيد = سكر الديوكسيريبوز + مجموعة فوسفات + قاعدة آزوتية. هذه الوحدة الأساسية لبناء ADN."},
+    {q:"كم عدد القواعد الآزوتية في ADN؟",opts:["2","3","4","5"],ans:2,
+     exp:"✅ ADN يحتوي على 4 قواعد آزوتية: الأدينين (A)، الثيمين (T)، الغوانين (G)، والسيتوزين (C)."},
+    {q:"وفق قاعدة Chargaff، أيّ القواعد يترابط مع G؟",opts:["A","T","C","U"],ans:2,
+     exp:"✅ G ≡ C (بثلاث روابط هيدروجينية) وA = T (بروابط هيدروجينية). هذا التكامل أساس بنية الحلزون المزدوج."},
+    {q:"ما إنزيم يفكّ الروابط الهيدروجينية أثناء التضاعف؟",opts:["ADN Polymérase","ADN Ligase","Hélicase","ARN Polymérase"],ans:2,
+     exp:"✅ Hélicase هو الإنزيم الذي يفكّ الروابط الهيدروجينية بين القواعد ويفصل الشريطين في بداية التضاعف."},
+    {q:"ما نوع تضاعف ADN؟",opts:["محافظ تام","شبه محافظ","توزيعي","متناوب"],ans:1,
+     exp:"✅ تضاعف ADN شبه محافظ (Semi-conservatif): كل جزيء ابن يحتفظ بشريط أصلي واحد ويُركّب شريطاً جديداً مكمّلاً."},
+    {q:"أين يوجد ADN في الخلية بشكل رئيسي؟",opts:["السيتوبلازم","الغشاء الخلوي","نواة الخلية","الريبوسومات"],ans:2,
+     exp:"✅ ADN يوجد أساساً في نواة الخلية مرتبطاً بالكروموسومات. يوجد أيضاً بكميات صغيرة في المتقدرات والبلاستيدات."},
+    {q:"ما وظيفة إنزيم ADN Polymérase؟",opts:["يفكّ الروابط الهيدروجينية","يُضيف النيوكليوتيدات الجديدة","يلحّم القطع المتقطعة","يُرمّز البروتينات"],ans:1,
+     exp:"✅ ADN Polymérase يُضيف النيوكليوتيدات المكمّلة على كل شريط قالب أثناء التضاعف، باتجاه من 3' إلى 5'."},
+    {q:"ما الذي تُعبِّر عنه المورثة (الجين)؟",opts:["بروتين أو RNA وظيفي","سكر الريبوز","مجموعة الفوسفات","عدد الكروموسومات"],ans:0,
+     exp:"✅ المورثة هي قطعة من ADN تُرمِّز لبروتين محدد أو RNA وظيفي. هي الوحدة الوظيفية للمعلومة الوراثية."},
+    {q:"كيف تُسمى الأشكال المختلفة لنفس المورثة؟",opts:["نيوكليوتيدات","أليلات (Allèles)","كودونات","كروماتيدات"],ans:1,
+     exp:"✅ الأشكال المختلفة لنفس المورثة تُسمى أليلات (Allèles). مثلاً: أليل لون العيون الأزرق وآخر للبني على نفس المورثة."}
+  ],
+  tf:[
+    {q:"يحتوي ADN على قاعدتين فقط: A وT.",ans:false,
+     exp:"❌ خطأ — ADN يحتوي على 4 قواعد: A، T، G، C. A يترابط مع T وG يترابط مع C (قاعدة Chargaff)."},
+    {q:"التضاعف شبه المحافظ يعني أن كل جزيء ابن يحتفظ بشريط أصلي واحد.",ans:true,
+     exp:"✅ صحيح — هذا هو جوهر التضاعف شبه المحافظ: شريط قديم + شريط جديد في كل جزيء ابن."},
+    {q:"يتضاعف ADN بشكل كامل قبل كل انقسام خلوي.",ans:true,
+     exp:"✅ صحيح — قبل انقسام الخلية، يجب أن يتضاعف ADN بالكامل لضمان حصول كل خلية بنت على نسخة كاملة."},
+    {q:"إنزيم ADN Ligase يفكّ الروابط بين القواعد.",ans:false,
+     exp:"❌ خطأ — ADN Ligase يُلحّم ويوصّل قطع ADN المتقطعة (شريط لاغ). أما الذي يفكّ الروابط فهو Hélicase."},
+    {q:"المورثة هي وحدة المعلومة الوراثية المسؤولة عن صفة معينة.",ans:true,
+     exp:"✅ صحيح — المورثة (Gène) هي الوحدة الوظيفية للوراثة، تُرمِّز لبروتين أو RNA وتتحكم في صفة معينة."}
+  ]
+});
+
+/* ════════════════════════════════════════
+   QUIZ DATA — MEIOSE
+════════════════════════════════════════ */
+makeGame({
+  id:'mei',page:'meiose',
+  qcol:'var(--teal-lt)',tcol:'var(--amber)',
+  tfbg:'var(--mint-pale)',tfborder:'var(--mint-lt)',
+  quiz:[
+    {q:"ما الاسم العلمي للانقسام المنصف؟",opts:["Mitose","Méiose","Amitose","Cytocinèse"],ans:1,
+     exp:"✅ الانقسام المنصف = Méiose. أما Mitose فهو الانقسام المتساوي."},
+    {q:"كم عدد الخلايا الناتجة عن الانقسام المنصف؟",opts:["خليتان (2n)","خليتان (n)","4 خلايا (2n)","4 خلايا (n)"],ans:3,
+     exp:"✅ ينتج الانقسام المنصف 4 خلايا جنسية أحادية الصيغة الصبغية (n)، وذلك بسبب حدوث انقسامين متتاليين."},
+    {q:"في أي مرحلة يحدث العبور الوراثي؟",opts:["Métaphase I","Prophase I","Anaphase II","Télophase I"],ans:1,
+     exp:"✅ العبور الوراثي يحدث خلال Prophase I عندما تقترن الكروموسومات المتماثلة وتتبادل مقاطع كروماتيداتها."},
+    {q:"ما الذي يُسمى ثنائياً (Bivalent)؟",opts:["كروماتيد واحد","كروموسومان متماثلان مقترنان","أربعة كروماتيدات حرة","نواتان متلامستان"],ans:1,
+     exp:"✅ الثنائي (Bivalent) هو زوج من الكروموسومات المتماثلة المقترنة خلال Prophase I."},
+    {q:"ما الصيغة الصبغية للخلايا الناتجة عند الإنسان بعد الميوز؟",opts:["2n = 46","n = 46","n = 23","2n = 23"],ans:2,
+     exp:"✅ n = 23 كروموسوم. بعد التلقيح تعود إلى 2n = 46."},
+    {q:"ما الذي ينفصل في Anaphase I؟",opts:["الكروماتيدات الشقيقة","الكروموسومات المتماثلة","نصفي الخلية","روابط الفوسفات"],ans:1,
+     exp:"✅ في Anaphase I تنفصل الكروموسومات المتماثلة. أما انفصال الكروماتيدات الشقيقة فيحدث في Anaphase II."},
+    {q:"ما الفرق الأساسي بين الانقسام المنصف والمتساوي؟",opts:["المنصف في الخلايا الجسمية","المتساوي ينتج (n)","المنصف ينتج (n) والمتساوي (2n)","لا فرق بينهما"],ans:2,
+     exp:"✅ الانقسام المنصف ينتج خلايا n (أحادية) بينما المتساوي ينتج 2n (مزدوجة مطابقة للأم)."},
+    {q:"ما هدف الانقسام المنصف الرئيسي؟",opts:["النمو والترميم","إنتاج الأمشاج","تكاثر البكتيريا","توليد الطاقة"],ans:1,
+     exp:"✅ الانقسام المنصف مخصص لإنتاج الخلايا الجنسية (أمشاج) للتكاثر الجنسي."},
+    {q:"كم مرة يتضاعف ADN خلال الانقسام المنصف؟",opts:["مرتان","ثلاث مرات","مرة واحدة فقط","لا يتضاعف"],ans:2,
+     exp:"✅ يتضاعف ADN مرة واحدة فقط قبل الانقسام I، ثم يحدث الانقسامان I وII دون تضاعف إضافي."},
+    {q:"ما نتيجة العبور الوراثي على الأمشاج؟",opts:["أمشاج متطابقة","تقليل التنوع","تركيبات جينية جديدة","أمشاج بدون كروموسومات"],ans:2,
+     exp:"✅ العبور يُولّد كروماتيدات معاد تركيبها تحمل تركيبات جينية جديدة، مما يُنتج تنوعاً وراثياً هائلاً."}
+  ],
+  tf:[
+    {q:"الانقسام المنصف ينتج خليتين مثل الانقسام المتساوي.",ans:false,
+     exp:"❌ خطأ — الانقسام المنصف ينتج 4 خلايا جنسية أحادية (n)، بينما المتساوي ينتج خليتين مزدوجتين (2n)."},
+    {q:"العبور الوراثي يحدث بين الكروماتيدات غير الشقيقة.",ans:true,
+     exp:"✅ صحيح — يحدث التبادل بين كروماتيد أبوي وكروماتيد أمومي، لا بين الكروماتيدين الشقيقين لنفس الكروموسوم."},
+    {q:"بعد الانقسام المنصف، الخلايا الناتجة تحتوي على نفس عدد كروموسومات الأم.",ans:false,
+     exp:"❌ خطأ — الخلايا الناتجة تحتوي على n (نصف 2n). هذا الاختزال ضروري للحفاظ على عدد كروموسومات النوع."},
+    {q:"الانقسام المنصف يحدث في الأعضاء التناسلية.",ans:true,
+     exp:"✅ صحيح — يحدث في الخصيتين (سبيرماتوجينيز) والمبيضين (أووجينيز) لإنتاج الأمشاج."},
+    {q:"لا يحدث تضاعف ADN بين الانقسامين I وII.",ans:true,
+     exp:"✅ صحيح — تضاعف ADN يحدث مرة واحدة فقط قبل الانقسام I. الانقسام II يحدث دون تضاعف إضافي."}
+  ]
+});
+
+/* ════════════════════════════════════════
+   QUIZ DATA — PHENOTYPE
+════════════════════════════════════════ */
+makeGame({
+  id:'phe',page:'phenotype',
+  qcol:'#8050cc',tcol:'var(--amber)',
+  tfbg:'#ede0ff',tfborder:'#c0a0ee',
+  quiz:[
+    {q:"ما الاسم العلمي للنمط الوراثي؟",opts:["Phénotype","Génotype","Allèle","Locus"],ans:1,
+     exp:"✅ النمط الوراثي = Génotype. أما Phénotype فهو النمط الظاهري."},
+    {q:"ما النمط الوراثي للفرد الهجين؟",opts:["AA","aa","Aa","AAaa"],ans:2,
+     exp:"✅ الهجين (Hétérozygote) = Aa. أما AA فمتماثل السيادة وaa متماثل المتنحي."},
+    {q:"متى يظهر الأليل المتنحي في النمط الظاهري؟",opts:["في AA","في Aa","في aa فقط","أبداً"],ans:2,
+     exp:"✅ الأليل المتنحي لا يظهر إلا في aa. في Aa يُخفيه الأليل السائد A."},
+    {q:"في تزاوج Aa × Aa، نسبة النمط الظاهري السائد؟",opts:["1/4","1/2","3/4","1"],ans:2,
+     exp:"✅ في Aa×Aa: AA=1/4، Aa=2/4، aa=1/4. النمط الظاهري السائد = AA+Aa = 3/4 (النسبة الكلاسيكية 3:1)."},
+    {q:"ما الذي يُشكّل النمط الظاهري؟",opts:["النمط الوراثي فقط","البيئة فقط","النمط الوراثي + البيئة","الجنس فقط"],ans:2,
+     exp:"✅ النمط الظاهري = النمط الوراثي × البيئة. كلاهما يؤثران معاً لتحديد الصفات الظاهرة."},
+    {q:"أيٌّ من التالي لا يتأثر بالبيئة؟",opts:["الطول","العضلات","فصيلة الدم","لون الجلد"],ans:2,
+     exp:"✅ فصيلة الدم تتحدد حصراً بالنمط الوراثي ولا يؤثر فيها الوسط. أما الطول والعضلات فيتأثران."},
+    {q:"ما النمط الظاهري لفرد بنمط وراثي Aa (A سائد)؟",opts:["[a]","[A]","مزيج","عديم الصفة"],ans:1,
+     exp:"✅ الفرد Aa يظهر بالنمط الظاهري [A] لأن الأليل السائد A يُخفي المتنحي a."},
+    {q:"ماذا يحسب مربع بونيت؟",opts:["عدد كروموسومات الأبوين","نسب الأنماط الوراثية والظاهرية للنسل","نوع الجنس","كمية ADN"],ans:1,
+     exp:"✅ مربع بونيت يحسب النسب النظرية للأنماط الوراثية والظاهرية في نسل تزاوج معين."},
+    {q:"كم نوعاً من الأمشاج ينتج الفرد Aa؟",opts:["نوع واحد (A)","نوعان (A وa)","ثلاثة","أربعة"],ans:1,
+     exp:"✅ الفرد Aa ينتج نوعين: 1/2 تحمل A و1/2 تحمل a."},
+    {q:"ما معنى Homozygote dominant؟",opts:["أليلان مختلفان","أليلان سائدان متماثلان (AA)","أليلان متنحيان (aa)","لا جينات"],ans:1,
+     exp:"✅ Homozygote dominant = متماثل السيادة = يحمل نسختين من الأليل السائد (AA)."}
+  ],
+  tf:[
+    {q:"النمط الوراثي يتغير أثناء حياة الكائن تحت تأثير البيئة.",ans:false,
+     exp:"❌ خطأ — النمط الوراثي ثابت طوال حياة الكائن. البيئة تؤثر على التعبير (النمط الظاهري) لا على الجينات ذاتها."},
+    {q:"الفرد بنمط وراثي Aa يُسمى هجيناً (Hétérozygote).",ans:true,
+     exp:"✅ صحيح — الهجين يحمل أليلين مختلفين لنفس المورثة."},
+    {q:"في تزاوج Aa × Aa، نسبة الأنماط الوراثية 1:2:1.",ans:true,
+     exp:"✅ صحيح — مربع بونيت: AA=1/4، Aa=2/4، aa=1/4، أي 1:2:1."},
+    {q:"الأليل المتنحي لا يُورَّث ولا ينتقل للأبناء.",ans:false,
+     exp:"❌ خطأ — الأليل المتنحي يُورَّث وينتقل للأبناء حتى لو لم يظهر عند الأبوين الهجينين."},
+    {q:"يمكن لكائنين بنفس النمط الوراثي أن يختلفا في النمط الظاهري بسبب البيئة.",ans:true,
+     exp:"✅ صحيح — القطة السيامية وزهرة الهورتنسيا مثالان: نفس الجينات، نمط ظاهري مختلف حسب الظروف البيئية."}
+  ]
+});
+
+/* ════════════════════════════════════════
+   QUIZ DATA — MUTATIONS
+════════════════════════════════════════ */
+makeGame({
+  id:'mut',page:'mutations',
+  qcol:'#3aaa40',tcol:'var(--amber)',
+  tfbg:'#e8fae0',tfborder:'#a0d890',
+  quiz:[
+    {q:"ما التعريف الصحيح للطفرة؟",opts:["إعادة ترتيب الجينات","تغيّر مفاجئ ودائم في تسلسل ADN","انقسام غير طبيعي","تبادل مقاطع بين الكروموسومات"],ans:1,
+     exp:"✅ الطفرة هي تغيّر مفاجئ ودائم في تسلسل قواعد ADN. تختلف عن العبور الوراثي الذي يُعيد ترتيب موجود."},
+    {q:"ما نوع الطفرة التي تُصيب قاعدة آزوتية واحدة؟",opts:["جينومية","صبغية","جينية نقطية","حذف كبير"],ans:2,
+     exp:"✅ الطفرة الجينية النقطية (Mutation génique) تصيب قاعدة أو بضع قواعد. الصبغية: بنية الكروموسوم. الجينومية: عدده."},
+    {q:"ما الطفرة التي تسبب متلازمة داون؟",opts:["استبدال نقطي","حذف صبغي","طفرة جينومية (Trisomie 21)","إضافة نقطية"],ans:2,
+     exp:"✅ متلازمة داون = Trisomie 21: وجود 3 نسخ بدل 2 من الكروموسوم 21. هذه طفرة جينومية."},
+    {q:"ماذا يحدث عند حذف قاعدة واحدة في ADN؟",opts:["لا شيء","تغيير قاعدة واحدة","انزياح الإطار القرائي (Frameshift)","تضاعف الجين"],ans:2,
+     exp:"✅ حذف قاعدة واحدة يُسبب Frameshift: انزياح الإطار القرائي يغيّر كل الكودونات بعده."},
+    {q:"أيٌّ مما يلي محفّز كيميائي طافر؟",opts:["UV","الإشعاع النووي","دخان التبغ","الحرارة"],ans:2,
+     exp:"✅ دخان التبغ محفّز كيميائي طافر. أما UV والإشعاع فمحفّزات فيزيائية."},
+    {q:"ما الفرق بين الطفرة الجرثومية والجسمية؟",opts:["الجرثومية في العضلات","الجرثومية تُورَّث للأبناء والجسمية لا","لا فرق","الجسمية أشد دائماً"],ans:1,
+     exp:"✅ الجرثومية تصيب الخلايا الجنسية وتُورَّث. الجسمية تصيب خلايا الجسم ولا تُورَّث لكن قد تُسبب السرطان."},
+    {q:"كيف تُساهم الطفرات في التنوع البيولوجي؟",opts:["تُقلل التنوع","تُولّد أليلات جديدة للانتقاء الطبيعي","تُوقف التطور","لا علاقة"],ans:1,
+     exp:"✅ الطفرات مصدر الأليلات الجديدة. المفيدة تنتشر بالانتقاء الطبيعي وتُساهم في تكوّن أنواع جديدة."},
+    {q:"ما نوع الطفرة في فقر الدم المنجلي؟",opts:["حذف كروموسوم","استبدال قاعدة A→T","إضافة كروموسوم","حذف مقطع كبير"],ans:1,
+     exp:"✅ فقر الدم المنجلي = استبدال A بـ T في الكودون السادس من جين بيتا-غلوبين → تشوّه الهيموغلوبين."},
+    {q:"ما آلية إصلاح ADN بعد الطفرة؟",opts:["Ligase وحده","الخلية تموت","آليات إصلاح ذاتي (Réparation de l'ADN)","لا توجد آلية"],ans:2,
+     exp:"✅ الخلية تملك آليات إصلاح متعددة تُصحح معظم الطفرات تلقائياً. إذا فشلت، تثبت الطفرة."},
+    {q:"لماذا بعض الطفرات 'مفيدة'؟",opts:["تُطيل العمر دائماً","تُعطي ميزة تنافسية في بيئة معينة","تُكثّر الجينات","تُلغي الأمراض"],ans:1,
+     exp:"✅ مثل مقاومة الملاريا لحاملي هيموغلوبين S — طفرة أعطت ميزة في البيئات الموبوءة."}
+  ],
+  tf:[
+    {q:"الطفرة الجينية النقطية تُغير دائماً البروتين الناتج.",ans:false,
+     exp:"❌ خطأ — بعض الطفرات النقطية صامتة (Silencieuses): تغيّر القاعدة لكن يبقى نفس الحمض الأميني بسبب تكرار الكودونات."},
+    {q:"الأشعة فوق البنفسجية (UV) محفّز طافر فيزيائي.",ans:true,
+     exp:"✅ صحيح — UV يُسبب ارتباط قاعدتي ثيمين مجاورتين (Dimère de thymine) مما يُشوّه ADN."},
+    {q:"الطفرة الجسمية تُورَّث للأبناء.",ans:false,
+     exp:"❌ خطأ — الطفرة الجسمية تصيب خلايا الجسم ولا تنتقل للأبناء. فقط الجرثومية تُورَّث."},
+    {q:"بدون الطفرات لما تنوّعت الأنواع الحية.",ans:true,
+     exp:"✅ صحيح — الطفرات هي المصدر الأول للتنوع الجيني وهي وقود التطور. بدونها ستكون الكائنات متطابقة وراثياً."},
+    {q:"الطفرة الجينومية تعني تغيير قاعدة واحدة فقط.",ans:false,
+     exp:"❌ خطأ — الطفرة الجينومية تعني تغيير عدد الكروموسومات (Trisomie, Polyploïdie). تغيير قاعدة = طفرة جينية نقطية."}
+  ]
+});
+</script>
+</body>
+</html>
